@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Aphiwataras">
 <meta name="application-name" content="Aphiwataras">
-<meta name="theme-color" content="#0f0f0f">
+<meta name="theme-color" content="#000000">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -82,7 +82,7 @@ a();addEventListener("resize",a);addEventListener("orientationchange",function()
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 <style>
-:root{--bg:#101010;--pn:#1a1a1a;--ln:#353535;--tx:#efefef;--mu:#a0a0a0;--b:#31d86e;--s:#fa4e42;--cy:#42a7fa;--am:#ffb74a;--vi:#9b8cff;--mo:Roboto,Noto Sans Thai,ui-monospace,Consolas,monospace}
+:root{--bg:#000000;--pn:#1a1a1a;--ln:#353535;--tx:#efefef;--mu:#a0a0a0;--b:#31d86e;--s:#fa4e42;--cy:#42a7fa;--am:#ffb74a;--vi:#9b8cff;--mo:Roboto,Noto Sans Thai,ui-monospace,Consolas,monospace}
 *{box-sizing:border-box}
 body{margin:0;color:var(--tx);font:13px/1.45 Roboto,Noto Sans Thai,'Segoe UI',Arial,sans-serif;background:radial-gradient(ellipse at 50% -10%,#2a2a2a 0,transparent 60%),linear-gradient(#212121 1px,transparent 1px) 0 0/100% 44px,linear-gradient(90deg,#212121 1px,transparent 1px) 0 0/44px 100%,var(--bg);min-height:100vh}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9;background:repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 3px)}
@@ -922,9 +922,9 @@ html.aphlock #aphGate{display:flex}
    พาเล็ต: #0f0f0f พื้น · #181818 การ์ด · #272727 ปุ่ม · #f1f1f1 ตัวอักษร · #3ea6ff ลิงก์/โฟกัส
    ===================================================================== */
 :root{
-  --bg:#0f0f0f;--pn:#181818;--pn2:#212121;--ln:#303030;--tx:#f1f1f1;--mu:#aaaaaa;
+  --bg:#000000;--pn:#181818;--pn2:#212121;--ln:#303030;--tx:#f1f1f1;--mu:#aaaaaa;
   --b:#31d86e;--s:#fb5d51;--cy:#3ea6ff;--am:#ffb84d;--gl:#3ea6ff;--ed:#303030;
-  --yt:#ff0033;--bgrgb:15,15,15;--card:#181818;--card2:#1f1f1f;--deep:#141414;--chip:rgba(255,255,255,.1);--chip2:rgba(255,255,255,.18);--hair:rgba(255,255,255,.08);
+  --yt:#ff0033;--bgrgb:0,0,0;--card:#0a0a0a;--card2:#121212;--deep:#000000;--chip:rgba(255,255,255,.1);--chip2:rgba(255,255,255,.18);--hair:rgba(255,255,255,.08);
   --mo:Roboto,'Noto Sans Thai',system-ui,'Segoe UI',Arial,sans-serif;
   color-scheme:dark}
 *,*::before,*::after{clip-path:none!important}
@@ -987,6 +987,8 @@ input[type=checkbox],input[type=radio]{accent-color:var(--cy)}
 .card::before,.mtbox::before,.mtbox::after,.pab::before{display:none!important}
 .metrics .card{background:var(--card2);border-radius:12px;box-shadow:none}
 .chart-card{background:var(--deep)}#tkP{background:var(--deep)}
+/* v39 · เอาตาราง ticker ออกจากหน้าแรก */
+#tkP{display:none!important}
 .chart-head{border-bottom:1px solid var(--hair)}
 .st h2{font-size:13.5px;font-weight:500;letter-spacing:.1px;color:var(--tx)}
 .metrics .ml,.tiny,.ml{color:var(--mu)}
@@ -996,6 +998,11 @@ input[type=checkbox],input[type=radio]{accent-color:var(--cy)}
 .mt{background:var(--card);border:1px solid var(--hair);border-radius:12px;box-shadow:none}
 .pab{background:var(--card2);border:1px solid var(--hair);border-radius:10px}
 .pab .pr0{border-bottom-color:var(--hair)}
+.pab .pr0.sdr,.pab .pr1.sdr{display:flex;align-items:center;justify-content:space-between;gap:3px;height:19px;line-height:19px;font-size:8.5px;padding:0 4px;text-align:left;text-shadow:none}
+.pab .pr0.sdr>span:first-child,.pab .pr1.sdr>span:first-child{font-weight:700;opacity:1}
+.pab .pr0.sdr u,.pab .pr1.sdr u{text-decoration:none;font-weight:800;letter-spacing:.3px;padding:0 2px;border:1px solid currentColor;border-radius:3px;font-size:.9em;line-height:1.2;margin-left:1px}
+.pab .pr0.sdr>span:nth-child(2),.pab .pr1.sdr>span:nth-child(2){font-size:1.6em;font-weight:700;letter-spacing:.3px;text-shadow:0 0 6px currentColor}
+.alt.sup{border-left-color:var(--s)!important}.alt.dem{border-left-color:var(--b)!important}
 .pab .pr2 .wtg{border-color:var(--hair);background:#212121;border-radius:4px}
 .mtbox{padding:0}
 #flow{border:0;border-radius:12px;background:var(--deep)}
@@ -1079,10 +1086,21 @@ html .logo,html.m .logo{flex:none;min-width:max-content;display:inline-grid;plac
 #bgPop .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;color:var(--mu);font-size:12px}
 #bgPop input[type=color]{width:56px;height:32px;padding:2px;border-radius:10px;cursor:pointer;background:#121212}
 #bgPop .rs{width:100%;margin-top:12px;padding:7px 10px}
+
+/* MTF strip v2: 4 แถว Brk Supply / Swp Supply / Swp Demand / Brk Demand (ตัด OB·FVG ออก) */
+.pab .sr{display:flex;align-items:center;justify-content:space-between;gap:4px;height:24px;line-height:24px;font-size:12px;padding:0 4px;text-align:left;text-shadow:none;border-bottom:1px solid var(--hair,#313131);white-space:nowrap;overflow:hidden}
+.pab .sr{position:relative}
+.pab .sr3{border-bottom:0}
+.pab .sr.rl{box-shadow:inset 3px 0 0 var(--rc),inset 0 0 0 1px var(--rc),inset 0 0 10px -2px var(--rc)}
+.pab .sr.rl::after{content:'';position:absolute;inset:0;pointer-events:none;background:var(--rc);opacity:.18}
+.pab .sr.rl>span{position:relative;z-index:1}
+.pab .sr>span:first-child{font-weight:800;opacity:1;letter-spacing:.3px}
+.pab .sr>span:nth-child(2){font-size:1.3em;font-weight:700;letter-spacing:.3px;text-shadow:0 0 6px currentColor}
+html.m.ipd .pab .sr{height:18px;line-height:18px;font-size:9.5px;padding:0 3px;gap:2px}
 </style>
 <script>
 (function(){
-var K='aph-bg',D='#0f0f0f',P=[['#0f0f0f','YouTube'],['#000000','Black'],['#0b1220','Midnight'],['#0a1a2f','Navy'],['#0c1a14','Forest'],['#170f1e','Plum'],['#1d0f12','Wine'],['#1a1d21','Slate']];
+var K='aph-bg',D='#000000',P=[['#000000','Black'],['#0f0f0f','YouTube'],['#0b1220','Midnight'],['#0a1a2f','Navy'],['#0c1a14','Forest'],['#170f1e','Plum'],['#1d0f12','Wine'],['#1a1d21','Slate']];
 function hsl(h){var r=parseInt(h.slice(1,3),16)/255,g=parseInt(h.slice(3,5),16)/255,b=parseInt(h.slice(5,7),16)/255,M=Math.max(r,g,b),m=Math.min(r,g,b),l=(M+m)/2,d=M-m,s=0,H=0;
  if(d){s=d/(1-Math.abs(2*l-1));H=M==r?((g-b)/d)%6:M==g?(b-r)/d+2:(r-g)/d+4;H*=60;if(H<0)H+=360}return[H,s,l]}
 function hex(H,S,L){var c=(1-Math.abs(2*L-1))*S,x=c*(1-Math.abs((H/60)%2-1)),m=L-c/2,r=0,g=0,b=0;
@@ -1091,7 +1109,7 @@ function hex(H,S,L){var c=(1-Math.abs(2*L-1))*S,x=c*(1-Math.abs((H/60)%2-1)),m=L
 function h2(a){return'#'+a.map(function(v){return('0'+v.toString(16)).slice(-2)}).join('')}
 function apply(c){var t=hsl(c),H=t[0],S=Math.min(t[1],.6),L=Math.min(t[2],.3),bg=hex(H,S,L),R=document.documentElement.style;
  R.setProperty('--bg',h2(bg));R.setProperty('--bgrgb',bg.join(','));R.setProperty('--card',h2(hex(H,S,Math.min(L+.04,.36))));
- R.setProperty('--card2',h2(hex(H,S,Math.min(L+.075,.4))));R.setProperty('--deep',h2(hex(H,S,Math.min(L+.015,.33))));
+ R.setProperty('--card2',h2(hex(H,S,Math.min(L+.075,.4))));R.setProperty('--deep',L<=0?'#000000':h2(hex(H,S,Math.min(L+.015,.33))));
  var m=document.querySelector('meta[name=theme-color]');if(m)m.content=h2(bg);return h2(bg)}
 function get(){try{return localStorage.getItem(K)||D}catch(e){return D}}
 function set(c){try{localStorage.setItem(K,c)}catch(e){}}
@@ -1169,7 +1187,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </div>
     <div class="card chart-card" data-p="chart">
       <div class="chart-head"><div><div class="tiny">PRICE ACTION / STRUCTURE MAP · live candles</div><strong id="chartPrice">—</strong> <span id="chartMove"></span></div>
-      <div class="sw"><label title="Order Blocks"><input type="checkbox" autocomplete="off" checked data-layer="ob"> OB</label><label><input type="checkbox" autocomplete="off" checked data-layer="fvg"> FVG</label><label title="Liquidity"><input type="checkbox" autocomplete="off" data-layer="liq"> Liq</label><label><input type="checkbox" autocomplete="off" data-layer="struct"> BOS/Sweep</label><label title="MTF Liquidity"><input type="checkbox" autocomplete="off" checked data-layer="mtf"> MTF Liq</label><label title="MTF Liq: แสดงเฉพาะ Delta (USD) ที่ปลายไส้ของแท่ง swing — liq บน = ไส้บน, liq ล่าง = ไส้ล่าง · เส้นประ break/sweep: เลื่อนเมาส์ไปที่เส้นเพื่อดู Δ (ต้อง LIVE, tf 5m ขึ้นไป)"><input type="checkbox" autocomplete="off" checked data-layer="mtfv"> Δ</label></div></div>
+      <div class="sw"><label title="Order Blocks"><input type="checkbox" autocomplete="off" checked data-layer="ob"> OB</label><label><input type="checkbox" autocomplete="off" checked data-layer="fvg"> FVG</label><label title="Liquidity"><input type="checkbox" autocomplete="off" data-layer="liq"> Liq</label><label><input type="checkbox" autocomplete="off" data-layer="struct"> BOS/Sweep</label><label title="MTF Liquidity"><input type="checkbox" autocomplete="off" data-layer="mtf"> MTF Liq</label><label title="MTF Liq: แสดงเฉพาะ Delta (USD) ที่ปลายไส้ของแท่ง swing — liq บน = ไส้บน, liq ล่าง = ไส้ล่าง · เส้นประ break/sweep: เลื่อนเมาส์ไปที่เส้นเพื่อดู Δ (ต้อง LIVE, tf 5m ขึ้นไป)"><input type="checkbox" autocomplete="off" checked data-layer="mtfv"> Δ</label></div></div>
       <div id="chRow"><div id="chartWrap" style="padding:8px 8px 0;position:relative"><canvas id="chart"></canvas><div id="histBox" hidden role="status"><span id="histMsg"></span><button type="button" id="histBtn" onclick="histKick()">ลองใหม่ทันที</button></div><div id="wkP" hidden role="dialog" aria-label="Wick buy/sell"></div>
         <div id="chBar" role="toolbar" aria-label="ควบคุมกราฟ"><button type="button" data-ca="out" title="ซูมออก (−) · ล้อเมาส์เลื่อนลง">−</button><button type="button" data-ca="in" title="ซูมเข้า (+) · ล้อเมาส์เลื่อนขึ้น">＋</button><button type="button" data-ca="left" title="เลื่อนไปอดีต (←) · ลากกราฟไปทางขวา">◀</button><button type="button" data-ca="right" title="เลื่อนไปปัจจุบัน (→) · ลากกราฟไปทางซ้าย">▶</button><button type="button" data-ca="live" title="กลับแท่งล่าสุด (End) · ดับเบิลคลิกกราฟ = รีเซ็ตซูม">⏭ LIVE</button><button type="button" id="chLp" title="เปิด = กดค้างบนกราฟ (ทัช) แล้วมีเมนูวาง Limit order · ปิด (ค่าเริ่มต้น) = กดค้าง/ลากดูราคาและวันที่เท่านั้น">LMT</button><span id="chInfo"></span></div>
         <div id="scMode" role="group" aria-label="Price scale"><button type="button" data-sc="lin" title="Scale ธรรมดา (linear)">LIN</button><button type="button" data-sc="log" title="Log scale">LOG</button></div>
@@ -1185,7 +1203,7 @@ document.addEventListener('DOMContentLoaded',function(){
           <button id="fzX" style="display:none">ปิด position</button>
         </div></div>
 <div id="tkP" role="region" aria-label="Tickers L/S signal"><div class="tkS" id="tkS"></div></div></div>
-      <div class="legend" id="dfLegend"><span>Δ tf1 ปัจจุบัน · tf2-4 ก่อนหน้า</span><label title="แท่งเทียนปัจจุบันของ tf1 + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" checked data-layer="df1"> tf1</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf2 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" checked data-layer="df2"> tf2</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf3 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" checked data-layer="df3"> tf3</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf4 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" checked data-layer="df4"> tf4</label><label title="Δ ไส้: volume delta (taker buy−sell) เฉพาะโซนไส้บน/ล่างของแต่ละแท่ง — แสดงเฉพาะโซนที่ฝั่งใดฝั่งหนึ่งชนะชัด: ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ (LIVE, 5m ขึ้นไป)"><input type="checkbox" autocomplete="off" checked data-layer="dfw"> ไส้ Δ</label><label title="เส้นเปลี่ยนวัน (00:00 UTC) — เส้นประสีทอง + วันที่ (แสดงเมื่อ TF กราฟ ≤ 4H)"><input type="checkbox" autocomplete="off" checked data-layer="day"> เส้นวัน</label></div>
+      <div class="legend" id="dfLegend"><span>Δ tf1-4 ก่อนหน้า (ฝั่งขวา) · tf1 ปัจจุบันบนแท่งล่าสุด</span><label title="แท่งเทียนปัจจุบันของ tf1 + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df1"> tf1</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf2 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df2"> tf2</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf3 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df3"> tf3</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf4 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df4"> tf4</label><label title="Δ ไส้: volume delta (taker buy−sell) เฉพาะโซนไส้บน/ล่างของแต่ละแท่ง — แสดงเฉพาะโซนที่ฝั่งใดฝั่งหนึ่งชนะชัด: ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ (LIVE, 5m ขึ้นไป)"><input type="checkbox" autocomplete="off" checked data-layer="dfw"> ไส้ Δ</label><label title="เส้น Demand (แนวรับ) จาก tf1–tf4 + แท่งปัจจุบัน = เส้น dash จากปลายไส้ล่างไปถึงแท่งล่าสุด + 4 แท่ง เมื่อ volume ที่ไส้ล่างหนาและ Δ บวก (ผู้ขายถูกซื้อรับ)\nเมื่อราคา break/sweep เส้น Demand/Supply → เก็บเส้นไว้เป็นเส้นจุด (dotted) โปร่งใส ~25% (เห็นชัดแต่ไม่เด่น) จบที่แท่งที่ทะลุ ไม่มีคำอธิบาย · Bar Replay แสดงด้วย (ค่าประมาณจากแท่งเทียน)"><input type="checkbox" autocomplete="off" checked data-layer="dfi"> เส้นไส้</label><label title="แสดงแท่งเทียน/Δ ของ tf1–tf4 ฝั่งขวา + Δ บนแท่งปัจจุบัน · ปิดได้โดยเส้นไส้ยังอยู่ (ใช้ร่วมกับ tf1–tf4 ที่เลือก)"><input type="checkbox" autocomplete="off" checked data-layer="dfc"> แท่งเทียน</label><label title="เส้นเปลี่ยนวัน (00:00 UTC) — เส้นประสีทอง + วันที่ (แสดงเมื่อ TF กราฟ ≤ 4H)"><input type="checkbox" autocomplete="off" checked data-layer="day"> เส้นวัน</label></div>
     </div>
     <div class="card scancard" data-p="scan" data-pw="chart">
       <div class="st"><h2>PA SCAN · 40 TICKERS</h2><span class="tiny" id="scanI">loading…</span></div>
@@ -1296,6 +1314,12 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="alr"><span class="tiny">ตรวจกับ:</span><select id="alScope"><option value="cur">เหรียญที่เปิดอยู่</option><option value="scan">ทั้งรายการ PA SCAN</option><option value="both">ทั้งสองอย่าง</option></select></div>
   <div class="tiny" id="alStat"></div>
  </section>
+ <section>
+  <h3>②+ แจ้งเตือน Break / Sweep ของ Supply · Demand</h3>
+  <div class="alr"><label><input type="checkbox" id="alEvOn"> เปิดใช้งาน</label></div>
+  <div class="alr"><label><input type="checkbox" id="alEvBs"> Break Supply</label><label><input type="checkbox" id="alEvSs"> Sweep Supply</label><label><input type="checkbox" id="alEvBd"> Break Demand</label><label><input type="checkbox" id="alEvSd"> Sweep Demand</label></div>
+  <div class="tiny">เหรียญที่เปิดอยู่ · ทุก TF ในตาราง MTF · Supply = swing high · Demand = swing low · Break = ปิดทะลุ · Sweep = ไส้ทะลุแล้วปิดกลับ · ครั้งแรกที่เห็นเหรียญ/TF = baseline เงียบ</div>
+ </section>
   <section>
   <h3>③ ช่องทางแจ้งเตือน</h3>
   <div class="alr"><label><input type="checkbox" id="alSnd"> เสียง</label><label><input type="checkbox" id="alVib"> สั่น</label><label><input type="checkbox" id="alSys"> แจ้งเตือนระบบ</label><label><input type="checkbox" id="alKeep"> คงหน้าจอเปิด</label></div>
@@ -1325,7 +1349,7 @@ let cvMode='20';try{const q=localStorage.getItem('aph_cvm');if(['day','week','15
 const CVL={day:'วัน',week:'สัปดาห์','150':'150','20':'20'};
 function cvWin(c){let w,tr=0;if(cvMode==='20'||cvMode==='150'){const N=+cvMode;w=c.length>N?c.slice(-N):c;tr=w.length<N?1:0}else{const dn=Math.floor(Date.now()/864e5),ws=(cvMode==='week'?dn-(dn+3)%7:dn)*864e5;w=c.filter(x=>x.t>=ws);tr=c.length&&c[0].t>ws?1:0}return{w,tr}}
 const S={ltp:0,mt:0,sym:'BTCUSDT',tf:'15m',mode:'SIM',price:0,pp:0,candles:[],bars:[],cvdH:[],ph:[],cvd:0,sec:0,flows:[],cb:0,cs:0,book:{b:[],a:[]},whales:[],lw:0,chg:0,qv:0,fund:null,oi:null,lo:0,hi:0,sim:{bias:0,n:0},st:'WAIT',z:[],sts:[],A:null};
-const layers={ob:1,fvg:1,liq:0,struct:0,mtf:1,mtfv:1,df0:0,df1:1,df2:1,df3:1,df4:1,dfw:1,day:1};let ws=[],oiT,gen=0;
+const layers={ob:1,fvg:1,liq:0,struct:0,mtf:0,mtfv:1,df0:0,df1:0,df2:0,df3:0,df4:0,dfw:1,dfi:1,dfc:1,day:1};let ws=[],oiT,gen=0;
 /* ---------- tweened numbers ---------- */
 const tv={};function setT(id,v,d=2,pre='',suf='',sg=0){const o=tv[id]||(tv[id]={c:v,e:$(id),dirty:1});if(o.t!==v||o.d!==d||o.pre!==pre||o.suf!==suf||o.sg!==sg)o.dirty=1;o.t=v;o.d=d;o.pre=pre;o.suf=suf;o.sg=sg}
 const HC={};function setH(id,h){if(HC[id]!==h){HC[id]=h;$(id).innerHTML=h}}
@@ -1480,10 +1504,10 @@ const CHS={log:false},FVGA=.04;
 function pxToY(p,T,cy){if(CHS.log&&S.lo>0&&S.hi>S.lo){const a=Math.log(S.hi),b=Math.log(S.lo);return T+(a-Math.log(Math.max(p,1e-12)))/(a-b)*cy}return T+(S.hi-p)/(S.hi-S.lo)*cy}
 function yToPx(yv,T,cy){const f=(yv-T)/cy;if(CHS.log&&S.lo>0&&S.hi>S.lo){const a=Math.log(S.hi),b=Math.log(S.lo);return Math.exp(a-f*(a-b))}return S.hi-f*(S.hi-S.lo)}
 function drawChart(now){const BC=TH.up,SC=TH.dn;const[g,w,h]=fit($('chart')),c=S.candles,N=Math.min(c.length,CH.n||(w<640?48:90));g.clearRect(0,0,w,h);if(TH.bg){g.fillStyle=TH.bg;g.fillRect(0,0,w,h)}if(N<3)return;
- const pn0=Math.min(CH.pan,Math.max(0,c.length-N)),E=pn0<0?Math.min(-pn0,N-3):0,pn=E?-E:pn0,NV=N-E,v=E?c.slice(c.length-NV):c.slice(c.length-pn-N,c.length-pn),A=S.A||{},L=8,R=w<640?96:156,T=12,B=26,G=(CH.g=(CH.g||0)+((PT.on&&PT.pos.some(q=>q.sym===S.sym&&q.live===(S.mode==='LIVE'))?(w<640?64:90):0)-(CH.g||0))*.15),pw=w-L-R-G,ph=h-T-B,vh=ph*.16,cy=ph-vh-8,off=c.length-pn-N;
+ const pn0=Math.min(CH.pan,Math.max(0,c.length-N)),E=pn0<0?Math.min(-pn0,N-3):0,pn=E?-E:pn0,NV=N-E,v=E?c.slice(c.length-NV):c.slice(c.length-pn-N,c.length-pn),A=S.A||{},L=8,R=w<640?52:60,T=12,B=26,G=(CH.g=(CH.g||0)+((PT.on&&PT.pos.some(q=>q.sym===S.sym&&q.live===(S.mode==='LIVE'))?(w<640?64:90):0)-(CH.g||0))*.15),pw=w-L-R-G,ph=h-T-B,vh=ph*.16,cy=ph-vh-8,off=c.length-pn-N;
  let lo=Math.min(...v.map(x=>x.l)),hi=Math.max(...v.map(x=>x.h));if(layers.liq&&A.hh){lo=Math.min(lo,A.ll);hi=Math.max(hi,A.hh)}if(PT.on){const r0=hi-lo,md=(hi+lo)/2,lv=S.mode==='LIVE';for(const z of PT.pos.concat(PT.ord))if(z.sym===S.sym&&z.live===lv)for(const p of[z.entry,ev(z,'price'),ev(z,'sl'),ev(z,'tp')])if(p>0&&Math.abs(p-md)<=r0*3){lo=Math.min(lo,p);hi=Math.max(hi,p)}}const pd=(hi-lo)*.06;lo-=pd;hi+=pd;
  S.lo=S.lo?S.lo+(lo-S.lo)*.12:lo;S.hi=S.hi?S.hi+(hi-S.hi)*.12:hi;const y=p=>pxToY(p,T,cy),cw=pw/N,x=i=>L+i*cw;
- g.font='10px Roboto,Noto Sans Thai,monospace';g.textAlign='left';for(let i=0;i<=4;i++){const yy=T+cy*i/4;g.strokeStyle=TH.grid;g.setLineDash([3,5]);g.beginPath();g.moveTo(L,yy);g.lineTo(w-R,yy);g.stroke();g.setLineDash([]);g.fillStyle=TH.txt;g.fillText(fmt(yToPx(yy,T,cy)),w-R+6,yy+3)}
+ g.font='9px Roboto,Noto Sans Thai,monospace';g.textAlign='left';for(let i=0;i<=4;i++){const yy=T+cy*i/4;g.strokeStyle=TH.grid;g.setLineDash([3,5]);g.beginPath();g.moveTo(L,yy);g.lineTo(w-R,yy);g.stroke();g.setLineDash([]);g.fillStyle=TH.txt;g.fillText(fmt(yToPx(yy,T,cy)),w-R+4,yy+3)}
  g.save();g.beginPath();g.rect(L,T,Math.max(0,w-R-L),cy);g.clip();/* v23: clip box ให้อยู่ในพื้นที่กราฟ (zone เก่าที่อยู่นอกช่วงราคาไม่ล้นไปทับแกน/volume) */
  S.z.forEach(q=>{if(!(q.k==='OB'?layers.ob:layers.fvg))return;if(q.hi<S.lo||q.lo>S.hi)return;const x0=x(Math.max(0,q.i-off)),col=q.k==='FVG'?(q.d>0?'86,177,251':'255,153,102'):q.d>0?'49,216,110':'251,93,81',xr=q.k==='OB'?Math.min(w-R,x(c.length-1-off+9)+cw*.5):w-R;if(xr<=x0)return;const fv=q.k==='FVG',lw0=g.lineWidth;if(fv)g.lineWidth=1;g.fillStyle=`rgba(${col},${fv?FVGA:.06})`;g.strokeStyle=`rgba(${col},${fv?.3:.3})`;g.setLineDash(fv?[1,3]:[]);g.fillRect(x0,y(q.hi),xr-x0,y(q.lo)-y(q.hi));g.strokeRect(x0,y(q.hi),xr-x0,y(q.lo)-y(q.hi));g.setLineDash([]);g.lineWidth=lw0;g.fillStyle=`rgb(${col})`;g.fillText(q.id,x0+4,Math.max(y(q.hi),T)+11)});g.restore();
  if(layers.liq&&A.hh)[[A.hh,BC,'BSL'],[A.ll,SC,'SSL'],[A.eq,'#42a7fa','EQ']].forEach(([p,col,t])=>{g.strokeStyle=col;g.setLineDash(t==='EQ'?[1,4]:[6,4]);g.globalAlpha=.7;g.beginPath();g.moveTo(L,y(p));g.lineTo(w-R,y(p));g.stroke();g.globalAlpha=1;g.setLineDash([]);g.fillStyle=col;g.textAlign='right';g.fillText(t+' '+fmt(p),w-R-4,y(p)-4);g.textAlign='left'});
@@ -1493,7 +1517,7 @@ function drawChart(now){const BC=TH.up,SC=TH.dn;const[g,w,h]=fit($('chart')),c=S
   const base=T+ph,bh=(k.bv/mxv)*vh,sh=(k.sv/mxv)*vh;g.globalAlpha=.4;g.fillStyle=BC;g.fillRect(X,base-bh,bw,bh);g.fillStyle=SC;g.fillRect(X,base-bh-sh,bw,sh);g.globalAlpha=1});
  if(layers.struct)S.sts.forEach(s=>{const i=s.i-off;if(i<0)return;g.fillStyle=s.c;g.fillText(s.t,x(i)-8,y(s.y)+(s.t.includes('▼')||(s.t==='SWEEP'&&s.y<(S.A?S.A.eq:0))?14:-6))});
  const p=S.price,up=p>=v[NV-1].o,col=up?BC:SC,py=y(p);g.strokeStyle=col;g.globalAlpha=.4;g.lineWidth=.6;g.setLineDash([2,4]);g.beginPath();g.moveTo(L,py);g.lineTo(w-R,py);g.stroke();g.setLineDash([]);g.globalAlpha=1;g.lineWidth=1;
- g.globalAlpha=.5;g.fillStyle=col;g.fillRect(w-R+2,py-9,72,18);g.globalAlpha=1;g.strokeStyle=col;g.lineWidth=1;g.strokeRect(w-R+2.5,py-8.5,71,17);g.fillStyle=TH.dl;g.textAlign='left';g.fillText(fmt(p),w-R+6,py+4);
+ g.globalAlpha=.5;g.fillStyle=col;g.fillRect(w-R+2,py-9,R-4,18);g.globalAlpha=1;g.strokeStyle=col;g.lineWidth=1;g.strokeRect(w-R+2.5,py-8.5,R-5,17);g.fillStyle=TH.dl;g.textAlign='left';g.save();g.font='9px Roboto,Noto Sans Thai,monospace';g.fillText(fmt(p),w-R+4,py+4);g.restore();
  {const tfm=TF[S.tf]||6e4,nw=Date.now();let rem=(c.length?c[c.length-1].t:0)+tfm-nw;if(!(rem>0&&rem<=tfm))rem=tfm-(nw%tfm);const sc=Math.max(0,Math.ceil(rem/1e3)),hh=Math.floor(sc/3600),mm=Math.floor(sc%3600/60),ss=sc%60,p2=n=>String(n).padStart(2,'0'),ct=tfm>=36e5?p2(hh)+':'+p2(mm)+':'+p2(ss):p2(mm)+':'+p2(ss),cwid=g.measureText(ct).width+8,side=R>=150,cx0=side?w-R+2+72+3:w-R+2,cy0=side?py-9:py+11;
   g.globalAlpha=.5;g.fillStyle=TH.txt;g.fillRect(cx0,cy0,cwid,18);g.globalAlpha=1;g.strokeStyle=TH.txt;g.lineWidth=1;g.strokeRect(cx0+.5,cy0+.5,cwid-1,17);g.fillStyle=TH.dl;g.fillText(ct,cx0+4,cy0+13)}
 
@@ -1616,25 +1640,24 @@ function mtf(){const key=S.mode+S.sym+S.tf;if(key!==mKey){mKey=key;for(const t i
  /* เวลา PA: tf0 = แท่งตัวเอง · tf1 ยืนยันด้วยแท่ง tf0 · tf2-tf4 ยืนยันด้วยแท่ง tf1 (หาแท่งเล็กแรกที่ราคาทะลุ/แตะระดับ ภายในแท่งของ TF นั้น) */
  try{const R0=cdl(0,T),R1=cdl(1,T);for(let k=1;k<5;k++){const m=S.M[k];if(!m)continue;const ref=k===1?R0:R1,dur=TMS[m.nm]||0;if(!ref||!ref.length||!dur)continue;for(const r of m.sd.concat(m.ls&&!m.sd.includes(m.ls)?[m.ls]:[])){const o=r.o;r.tm2=null;if(!o||!r.tm)continue;const t0=r.tm,t1=t0+dur,tl=m.atr*.25;for(const x of ref){if(x.t<t0)continue;if(x.t>=t1)break;if(r.brk?(o.hi?x.h>o.px:x.l<o.px):(o.hi?x.h>=o.px-tl:x.l<=o.px+tl)){r.tm2=x.t;break}}}}}catch(e){}
  const a0=(S.M[0]||S.M[1]||{}).atr,cell=(t,bg,fg,b,tip)=>({t,bg,fg,b:b?'700':'',tip:tip||''}),mh=(t,tip)=>({t,bg:'',fg:'',b:'',tip:tip||''});
- const r0=[{t:'',bg:'',fg:'',b:'',tip:''}],r1=[mh('PA','Price Action ของ swing ล่าสุด | สีเข้ม = อันดับความแรง 1-9')];
- let HL=null;for(let k=0;k<5;k++){const m=S.M[k],bz='transparent';
-  if(!m){r0.push(cell(T[k]||'n/a','transparent','#a0a0a0'));r1.push(cell('—',bz,'#a0a0a0'));continue}
-  const up=m.sd[0].key>=m.sd[1].key,f=up?m.sd[0]:m.sd[1],pr=f.key>=2e13?2:1,[bg,fg,bd]=f.d?sty(f.rk,pr,f.d>0):[bz,'#b8b8b8',false],hc=f.d>0?'#29d668':f.d<0?'#ef6b62':'#b8b8b8',
-   mk=(x)=>`${m.nm} ${x.lbl}${x.o?' | level '+fmt(x.o.px)+' | '+(x.dist>=0?'+':'')+x.dist.toFixed(2)+'% | ATR '+fmt(m.atr):''}${x.rk?' | อันดับ '+x.rk+'/9':''} ${x.tm&&k>0?' | เวลา: '+(x.tm2?'ยืนยันจากแท่ง '+(k===1?T[0]:T[1]):'ตามแท่ง '+m.nm):''} | ประเมินจาก OHLCV ไม่ใช่คำแนะนำการลงทุน`,
-   g=m.sd.filter(r=>r.tm).concat(m.ls&&!m.sd.includes(m.ls)?[m.ls]:[]).reduce((a,r)=>!a||r.tm>a.tm?r:a,null),
-   [bg2,fg2,bd2]=g&&g.d?sty(g.rk,g.key>=2e13?2:1,g.d>0):[bz,'#b8b8b8',false],
-   tip=mk(f)+(f.code==='WAIT'?' | สถานะ: WAIT (รอ setup)':''),tip2=g?mk(g)+' | สัญญาณล่าสุด':m.nm+' | ยังไม่พบสัญญาณในช่วงข้อมูลที่โหลด';
-  r0.push(cell(`${m.nm} (${fmt(m.atr)})&nbsp;&nbsp;${f.d>0?'L':f.d<0?'S':f.code==='WAIT'?'WAIT':'-'}${f.rk?f.rk+'/9':''}`,'transparent',hc,0,tip));
-  r1.push(cell('<span>'+esc(g?g.lbl:'—')+'</span><span>'+(g?fT(g.tm2||g.tm):'—')+'</span>',bg2,fg2,bd2,tip2));if(k>0&&g){const tt=g.tm2||g.tm;if(!HL||tt>HL.t)HL={j:k+1,t:tt,c:g.d>0?'#29d668':'#ef6b62'}}
-  }
- const r4=[mh('OB·FVG','OB ล่าสุด (แถว 1) และ FVG ล่าสุด (แถว 2) ของแต่ละ timeframe · % จากราคาปิด: Bull = ขอบบน|กลางโซน · Bear = ขอบล่าง|กลางโซน · แล้วตามด้วยเวลารับรู้ (แท่งยืนยันปิด)|เขียว = Bull · แดง = Bear')];
-  OBL.length=0;for(let k=0;k<5;k++)r4.push(wkCell(k,T));let OLH=null;for(let k=1;k<5;k++){const O=OBL[k];if(!O)continue;for(const z of[O.ob,O.fv])if(z&&(!OLH||z.rt>OLH.t))OLH={j:k+1,t:z.rt,c:z.d>0?'#29d668':'#fb6b61'}}
-  const rows=[r0,r1,r4];rows.hl=HL;rows.ol=OLH;mtfPaint(rows)}
+
+  const DEF=[['Brk','bs','#ef6b62','Supply = swing high · Break = ปิดทะลุ'],['Swp','ss','#ef6b62','Supply = swing high · Sweep = ไส้ทะลุแล้วปิดกลับ'],['Swp','sd','#29d668','Demand = swing low · Sweep = ไส้ทะลุแล้วปิดกลับ'],['Brk','bd','#29d668','Demand = swing low · Break = ปิดทะลุ']],R4=[[],[],[],[]];
+  for(let i=0;i<4;i++)R4[i].push(mh('',''));let HL=null;
+  for(let k=0;k<5;k++){const m=S.M[k],q=m?mtfSD(m):null,nk=m?m.nm:(T[k]||'n/a');const cc=cdl(k,T),ct=cc&&cc.length?cc[cc.length-1].t:0,dur=TMS[T[k]]||0,RN=window.RPL&&RPL.on&&RPL.now?RPL.now:0,isN=x=>!!x&&((ct&&x>=ct)||!!(RN&&dur&&x+dur>=RN));/* Bar Replay: แท่งที่ปิดพอดีเวลา replay (หรือกำลังก่อตัว) = now ไม่ต้องรอแท่งถัดไป */let mx=0,mc='',mi=-1;
+   for(let i=0;i<4;i++){const d=DEF[i],t=q?q[d[1]]:0,px=q?q[d[1]+'p']:0,
+    tip=m?nk+' '+d[0]+' '+d[3].split(' ')[0]+' · '+(t?'@ '+fmt(px)+' · '+fT(t):'ยังไม่พบในช่วงข้อมูลที่โหลด')+(isN(t)?' · เกิดในแท่งปัจจุบัน (now)':'')+' | '+d[3]:nk+' '+d[0]+' '+d[3].split(' ')[0]+' · ไม่มีข้อมูล';
+    R4[i].push(cell('<span>'+nk+' '+d[0]+'</span><span>'+(t?(isN(t)?'now':fT(t)):'—')+'</span>','transparent',m?d[2]:'#a0a0a0',0,tip));
+    if(t>mx){mx=t;mc=d[2];mi=i}}
+   if(mx)R4[mi][k+1].hl=mc;if(k>0&&mx&&(!HL||mx>HL.t))HL={j:k+1,t:mx,c:mc}}
+  const rows=R4;rows.hl=HL;rows.ol=null;mtfPaint(rows)}
+/* v46 · เวลาล่าสุดของ Break/Sweep: Supply = swing high · Demand = swing low (rc 2 = ปิดทะลุ = Break · rc 1 = ไส้ทะลุแล้วปิดกลับ = Sweep) — ใช้กับตาราง MTF + แจ้งเตือน */
+function mtfSD(m){const r={bs:0,ss:0,bd:0,sd:0,bsp:0,ssp:0,bdp:0,sdp:0};if(!m||!m.sw)return r;
+ for(const s of m.sw){if(!s.tag||!(s.end>=0)||!s.tt)continue;const ty=s.hi?(s.rc===1?'ss':'bs'):(s.rc===1?'sd':'bd');if(s.tt>r[ty]){r[ty]=s.tt;r[ty+'p']=s.px}}return r}
 /* build the table skeleton once, then only touch the cells whose content really changed (no innerHTML churn, no column re-layout) */
 let mtTD=null;
 function mtfPaint(rows){const host=$('mtfTop');
- if(!mtTD||!mtTD[0][0].isConnected){host.innerHTML='<div class="mtbox"><div class="mtg">'+[0,1,2,3,4,5].map(j=>'<div class="pab'+(j?'':' pz')+'"><div class="ps"><div class="pr pr0"></div><div class="pr pr1"'+(j===0?' style="display:none"':'')+'></div></div><div class="pr pr2"'+(j===0?' style="display:none"':'')+'></div></div>').join('')+'</div></div>';const bx=[...host.querySelectorAll('.pab')];mtTD=[0,1,2].map(i=>bx.map(b=>b.querySelector('.pr'+i)))}
- for(let i=0;i<rows.length;i++)for(let j=0;j<rows[i].length;j++){const c=rows[i][j],td=mtTD[i][j],k=c.t+'\u0001'+c.bg+'\u0001'+c.fg+'\u0001'+c.b+'\u0001'+c.tip;if(td._k===k)continue;td._k=k;td.innerHTML=c.t;td.style.background=c.bg;td.style.color=c.fg;td.style.fontWeight=c.b;td.title=c.tip;if(i===0)mtFit(td);else if(i===1)mtFit(td,5.5);else if(i===2)td.querySelectorAll('.obz').forEach(o=>mtFit(o,4.5))}
+ if(!mtTD||!mtTD[0][0].isConnected){host.innerHTML='<div class="mtbox"><div class="mtg">'+[0,1,2,3,4,5].map(j=>'<div class="pab'+(j?'':' pz')+'"><div class="ps"'+(j===0?' style="display:none"':'')+'>'+[0,1,2,3].map(i=>'<div class="pr sr sr'+i+'"></div>').join('')+'</div></div>').join('')+'</div></div>';const bx=[...host.querySelectorAll('.pab')];mtTD=[0,1,2,3].map(i=>bx.map(b=>b.querySelector('.sr'+i)))}
+ for(let i=0;i<rows.length;i++)for(let j=0;j<rows[i].length;j++){const c=rows[i][j],td=mtTD[i][j],k=c.t+'\u0001'+c.bg+'\u0001'+c.fg+'\u0001'+c.b+'\u0001'+c.tip+'\u0001'+(c.hl||'');if(td._k===k)continue;td._k=k;td.classList.toggle('rl',!!c.hl);if(c.hl)td.style.setProperty('--rc',c.hl);td.innerHTML=c.t;td.style.background=c.bg;td.style.color=c.fg;td.style.fontWeight=c.b;td.title=c.tip;mtFit(td,5.5)}
  const hl=rows.hl;for(let j=1;j<mtTD[0].length;j++){const b=mtTD[0][j].closest('.pab'),on=!!(hl&&hl.j===j);if(b.classList.contains('lt')!==on)b.classList.toggle('lt',on);if(on&&b.style.getPropertyValue('--hc')!==hl.c)b.style.setProperty('--hc',hl.c);const ol=rows.ol,oo=!!(ol&&ol.j===j);if(b.classList.contains('lo')!==oo)b.classList.toggle('lo',oo);if(oo&&b.style.getPropertyValue('--oc')!==ol.c)b.style.setProperty('--oc',ol.c)}}
 /* header row: shrink font (down to 7px) until the whole text fits its cell */
 function mtFit(td,mn){mn=mn||7;td.style.fontSize='';let fs=parseFloat(getComputedStyle(td).fontSize)||11;while(td.scrollWidth>td.clientWidth+.5&&fs>mn){fs-=.5;td.style.fontSize=fs+'px'}}
@@ -1786,7 +1809,7 @@ function chOverlay0(g,o){const{v,N,cw,x,L,R,T,cy,ph,w,pn,NS}=o,NN=NS||N;CH.cw=cw
  const fi=Math.floor((CH.x-L)/cw),fut=fi>=N,i=Math.max(0,Math.min(N-1,fi)),k=v[i],cx=fut?CH.x:x(i)+cw*.5,col=k.c>=k.o?BC:SC;
  if(!fut){g.fillStyle='rgba(66,167,250,.07)';g.fillRect(x(i),T,cw,ph)}
  g.strokeStyle='rgba(239,239,239,.55)';g.lineWidth=1;g.setLineDash([4,4]);g.beginPath();g.moveTo(cx,T);g.lineTo(cx,T+ph);g.moveTo(L,CH.y);g.lineTo(xe,CH.y);g.stroke();g.setLineDash([]);
- if(CH.y<=T+cy){const pr=yToPx(CH.y,T,cy);g.fillStyle='#42a7fa';g.fillRect(xe+2,CH.y-8,72,16);g.fillStyle='#141414';g.textAlign='left';g.fillText(fmt(pr),xe+6,CH.y+4)}
+ if(CH.y<=T+cy){const pr=yToPx(CH.y,T,cy);g.fillStyle='#42a7fa';g.fillRect(xe+2,CH.y-8,R-4,16);g.fillStyle='#141414';g.textAlign='left';g.save();g.font='9px Roboto,Noto Sans Thai,monospace';g.fillText(fmt(pr),xe+4,CH.y+4);g.restore()}
  if(fut){g.restore();return}const tt=tzf(k.t,{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}),tw=g.measureText(tt).width+12,tx=Math.max(L,Math.min(cx-tw/2,xe-tw));
  g.fillStyle='#42a7fa';g.fillRect(tx,T+ph+1,tw,15);g.fillStyle='#141414';g.textAlign='center';g.fillText(tt,tx+tw/2,T+ph+12);
  const vol=k.bv+k.sv,ch=(k.c/k.o-1)*100,rows=[tt,'O '+fmt(k.o)+'  H '+fmt(k.h),'L '+fmt(k.l)+'  C '+fmt(k.c),(ch>=0?'+':'')+ch.toFixed(2)+'%  rng '+fmt(k.h-k.l),'vol '+cf(vol)+(vol>0?'  buy '+Math.round(k.bv/vol*100)+'%':'')],
@@ -2020,20 +2043,66 @@ function dfxGet(tf){if(window.RPL&&RPL.on)return null;const key=S.mode+'|'+S.sym
    fetch(`https://fapi.binance.com/fapi/v1/klines?symbol=${SY[S.sym].ws.toUpperCase()}&interval=1M&limit=8`).then(r=>r.json()).then(j=>{if(!Array.isArray(j)||!j.length)throw 0;const r=dfxBuild(tf,j);if(r){e.c=r.c;e.p=r.p}}).catch(()=>{}).then(()=>{e.busy=0})}}
  else if(!e.c){const ms=tf==='1M'?2592e6:7776e6,a=simC(ms,S.price||SY[S.sym].base),q=a[a.length-1],p=a[a.length-2];e.c={t:q.t,ms,o:q.o,h:q.h,l:q.l,c:q.c,bv:q.bv,sv:q.sv};e.p=p?{t:p.t,ms,o:p.o,h:p.h,l:p.l,c:p.c,bv:p.bv,sv:p.sv}:null}
  const c=e.c;if(!c)return null;const p=S.price;if(p>0){c.c=p;if(p>c.h)c.h=p;if(p<c.l)c.l=p}return e.p?[e.p,c]:[c]}
-function dfDraw(g,o){if(!dfAny()||!S.candles.length)return;const{v,x,cw,T,cy,L,xe}=o;if(!v||!v.length)return;
+/* v42 · เส้นอ่านไส้ที่คงอยู่ (persist) จนกว่าราคาจะ break/sweep ปลายไส้ — key = symbol|tf|เวลาเปิดแท่ง|u/l */
+var DFL=new Map(),DFLK='aph-dfi-lines',DFLD=0;
+(function(){try{JSON.parse(localStorage.getItem(DFLK)||'[]').forEach(function(e){if(e&&e.k)DFL.set(e.k,e)})}catch(e){}})();
+function dfiSave(){try{const a=[...DFL.values()].sort((p,q)=>(p.dead?1:0)-(q.dead?1:0)||q.born-p.born).slice(0,120);DFL.clear();a.forEach(e=>DFL.set(e.k,e));localStorage.setItem(DFLK,JSON.stringify(a))}catch(e){}}
+/* โดน break/sweep = หลังแท่งต้นทางปิด ราคา (ไส้ของแท่งกราฟ + ราคาล่าสุด) วิ่งผ่านปลายไส้ — ไส้บน: high > ระดับ · ไส้ล่าง: low < ระดับ · คืนเวลาแท่งที่ทะลุ (0 = ยังไม่โดน) · เส้นที่โดนแล้วไม่ลบ วาดจาง 50% เป็นข้อมูลย้อนหลัง */
+function dfiBrk(e){const st=e.t+e.ms,cs=S.candles,H=M[e.tf],hit=q=>e.up?q.h>e.pr:q.l<e.pr,hm=TMS[e.tf]||e.ms;let bt=0;
+ if(Array.isArray(H)&&e.tf!==S.tf){for(const q of H)if(q.t>=st&&hit(q)){bt=q.t;break}}/* แท่ง TF ใหญ่ย้อนหลัง (~150 แท่ง) */
+ let i=cs.length;const from=Math.max(st,bt);while(i>0&&cs[i-1].t>=from)i--;/* ละเอียดขึ้นด้วยแท่งของกราฟ */
+ for(;i<cs.length;i++){if(hit(cs[i]))return(bt&&cs[i].t>=bt+hm)?bt:cs[i].t}
+ if(bt)return bt;
+ const p=S.price;return p>0&&hit({h:p,l:p})?Date.now():0}
+/* v44 · ย้อนสแกนแท่งที่ปิดแล้ว (สูงสุด DFN=20 แท่งต่อ TF) หาไส้ที่เข้าเกณฑ์ -> ลงทะเบียนเส้นย้อนหลัง · ที่ถูก break แล้วจะถูกวาดเป็นเส้นจุดจาง */
+function dfiEval(tf,c,subs,ms){const Z=wkCalc(c,subs),v0=Z.tot.b+Z.tot.s,out=[];
+ for(const upW of[true,false]){const z0=upW?Z.up:Z.lo;if(!z0.ex)continue;const f=wkF(z0);if(f.v<=0)continue;
+  const rg=c.h-c.l,sp=Math.abs(z0.e-z0.a),sh=v0>0?f.v/v0:0,dn=rg>0&&sp>0?sh/(sp/rg):0;
+  if(!(sh>=.08&&dn>=.75&&Math.abs(f.bp-.5)>=.04))continue;
+  if(upW?f.d>=0:f.d<0)continue;/* ติดตามเฉพาะ Demand (ไส้ล่าง+Δบวก) และ Supply (ไส้บน+Δลบ) · Supply แสดงเมื่อถูก break/sweep เท่านั้น */
+  const neg=f.d<0,it=upW?(neg?['Supply',TH.dn]:['BSL trap','#ffb74a']):(neg?['Break\u2193','#ff7043']:['Demand',TH.up]),pr=upW?Math.max(z0.a,z0.e):Math.min(z0.a,z0.e);
+  out.push({k:S.sym+'|'+tf+'|'+c.t+'|'+(upW?'u':'l'),sym:S.sym,tf,t:c.t,ms,up:upW,pr,typ:it[0],col:it[1],est:false,born:Date.now()})}
+ return out}
+var DFBF=new Set();
+function dfiBackfill(tf,arr){if(S.mode!=='LIVE'||(window.RPL&&RPL.on)||!arr||arr.length<3)return;
+ const bk=S.sym+'|'+tf;if(DFBF.has(bk))return;
+ const ms=TMS[tf]||6e4,n=Math.min(DFN,arr.length-1),cs=arr.slice(arr.length-1-n,arr.length-1),st=cs[0].t,en=cs[cs.length-1].t+ms-1,
+  iv=DFIV.find(q=>q[1]<ms&&(en-st)/q[1]<=4000);if(!iv)return;
+ DFBF.add(bk);const sym=S.sym,sy=SY[sym].ws.toUpperCase();
+ (async()=>{try{let rows=[],cur=st;for(let pg=0;pg<3&&cur<en;pg++){const j=await(await fetch(`https://fapi.binance.com/fapi/v1/klines?symbol=${sy}&interval=${iv[0]}&startTime=${cur}&endTime=${en}&limit=1500`)).json();
+    if(!Array.isArray(j)||!j.length)break;rows=rows.concat(j);if(j.length<1500)break;cur=j[j.length-1][0]+1}
+   if(!rows.length||S.sym!==sym)throw 0;
+   for(const c of cs){const subs=rows.filter(x=>x[0]>=c.t&&x[0]<c.t+ms);if(!subs.length)continue;
+    DFBD.add(sym+'|'+tf+'|'+c.t);const got=new Set();for(const e of dfiEval(tf,c,subs,ms)){got.add(e.k);const o=DFL.get(e.k);if(!o||o.est)DFL.set(e.k,e)}
+    for(const sf of['|u','|l']){const kk=sym+'|'+tf+'|'+c.t+sf,o=DFL.get(kk);if(o&&o.est&&!got.has(kk))DFL.delete(kk)}}
+   DFLD=1}catch(e){setTimeout(()=>DFBF.delete(bk),3e4)}})()}
+/* v45 · Bar Replay: ย้อนสแกนไส้ของแท่งที่ปิดแล้ว (ค่าประมาณจากแท่งเทียน ไม่มีข้อมูล tick) -> ลงทะเบียนเส้น Demand/Supply · ไม่เก็บลง localStorage */
+var RPDFL=new Map(),RPDFS=new Set(),DFBD=new Set();/* DFBD = แท่งที่ประเมินด้วยข้อมูลจริงแล้ว (LIVE) */
+function dfiRpScan(tf,arr){const R=window.RPL,rp=!!(R&&R.on);if((!rp&&S.mode!=='LIVE')||!arr||arr.length<3)return;const ms=TMS[tf]||6e4,n=Math.min(DFN,arr.length-1);
+ for(const c of arr.slice(arr.length-1-n,arr.length-1)){const sk=S.sym+'|'+tf+'|'+c.t;if(RPDFS.has(sk)||(!rp&&DFBD.has(sk)))continue;RPDFS.add(sk);
+  if(!(c.bv+c.sv>0)||!isFinite(c.c))continue;
+  try{for(const e of dfiEval(tf,c,[[c.t,0,c.h,c.l,0,0,0,(c.bv+c.sv)*c.c,0,0,c.bv*c.c]],ms)){e.est=true;if(rp)RPDFL.set(e.k,e);else if(!DFL.has(e.k)){DFL.set(e.k,e);DFLD=1}}}catch(x){}}}
+/* เวลาแท่งที่ทะลุปลายไส้ (ใน Replay ใช้เฉพาะข้อมูลถึงเวลา replay ปัจจุบัน) · 0 = ยังไม่โดน */
+function dfiBrkR(e){const st=e.t+e.ms,cs=S.candles,hit=q=>e.up?q.h>e.pr:q.l<e.pr,hm=TMS[e.tf]||e.ms;let bt=0;
+ try{const H=e.tf!==S.tf?rpClip(M[e.tf],e.tf):null;if(Array.isArray(H))for(const q of H)if(q.t>=st&&hit(q)){bt=q.t;break}}catch(x){}
+ let i=cs.length;const from=Math.max(st,bt);while(i>0&&cs[i-1].t>=from)i--;
+ for(;i<cs.length;i++)if(hit(cs[i]))return(bt&&cs[i].t>=bt+hm)?bt:cs[i].t;
+ return bt}
+function dfDraw(g0,o){let g=g0;if(!S.candles.length)return;const{v,x,cw,T,cy,L,xe}=o;if(!v||!v.length)return;
  const last=S.candles[S.candles.length-1];if(v[v.length-1].t!==last.t)return;/* เลื่อนกราฟออกจากแท่งล่าสุด -> ไม่วาด */
- const Tf=tfs(),X0=Math.round(x(v.length-1+9)+cw*.2),A=xe-X0-3,cols=[];if(A<26)return;
+ const Tf=tfs(),X0=Math.round(x(v.length-1+9)+cw*.2),A=xe-X0-3,cols=[];
  const Tx=dfTf2(Tf);let ov1=null;/* tf1 = TF ของกราฟ: โชว์ที่แท่งเทียนปัจจุบันบนกราฟโดยตรง (ไม่มีกล่อง/ไม่มีเส้นจุด) */
- for(const k of[1,2,3,4]){if(!Tx[k]||!layers['df'+k])continue;const arr=Tf[k]?cdl(k,Tf):dfxGet(Tx[k]);if(!arr||!arr.length)continue;
+ for(const k of[1,2,3,4]){if(!Tx[k])continue;const arr=Tf[k]?cdl(k,Tf):dfxGet(Tx[k]);if(!arr||!arr.length)continue;if(layers.dfi&&Tf[k]){dfiBackfill(Tx[k],arr);dfiRpScan(Tx[k],arr)}if(!layers['df'+k])continue;/* ซ่อนคอลัมน์ tf ฝั่งขวา แต่ยังสแกนเส้น Demand/Supply ต่อ */
   /* tf1 = แท่งปัจจุบัน (บนกราฟ) · tf2-tf4 = แท่งก่อนหน้า (ปิดแล้ว) + cur = แท่งปัจจุบัน ใช้เช็กว่าระดับถูกลากเก็บแล้วหรือยัง */
-  if(k===1)ov1={k,tf:Tx[k],c:arr[arr.length-1]};else if(arr.length>1)cols.push({k,tf:Tx[k],c:arr[arr.length-2],cur:arr[arr.length-1]})}
- if(!cols.length&&!ov1)return;
- const GAP=4;let n0=cols.length,cwid=Math.min(86,(A-GAP*(n0-1))/n0);while(n0>1&&cwid<34){cols.pop();n0=cols.length;cwid=Math.min(86,(A-GAP*(n0-1))/n0)}if(cwid<22)return;
+  if(k===1)ov1={k,tf:Tx[k],c:arr[arr.length-1]};/* v39: tf1 มีคอลัมน์ฝั่งขวาด้วย (แท่งก่อนหน้า) นอกเหนือจาก overlay บนแท่งปัจจุบัน */
+   if(arr.length>1&&A>=26)cols.push({k,tf:Tx[k],c:arr[arr.length-2],cur:arr[arr.length-1]})}
+
+ const GAP=4;let n0=cols.length,cwid=Math.min(86,(A-GAP*(n0-1))/n0);while(n0>1&&cwid<34){cols.pop();n0=cols.length;cwid=Math.min(86,(A-GAP*(n0-1))/n0)}if(cols.length&&cwid<22)cols.length=0;
  const BC=TH.up,SC=TH.dn,y=p=>pxToY(p,T,cy),narrow=cwid<52,fs=narrow?8:9,top0=T+2,HH=37,half=cwid/2;
  g.save();g.beginPath();g.rect(L,T,Math.max(0,xe-L),cy);g.clip();g.lineWidth=1;g.textBaseline='alphabetic';
  const hyOf=q=>Math.max(top0,Math.min(T+cy-HH-2,Math.round(y(q.c.h)-17-HH))),/* กล่องหัวป้ายวางเหนือปลายไส้บนของแท่ง (เหนือป้าย Δ ไส้) */
   occ=cols.map((q,ci)=>({x:X0+ci*(cwid+GAP),y:hyOf(q),w:cwid,h:HH}));/* กล่องที่ถูกจองแล้ว (หัวป้าย TF ทุกคอลัมน์ + ป้าย Liq ที่วางไปแล้ว) */
- const drawCol=(q,ci,cx,cwid,half,narrow,fs,ov)=>{const c=q.c,cu=q.cur,R=dfcLoad(q.tf,c),est=!(R&&R.rows&&R.rows.length),
+ const dfiOcc=[],eph=[],drawCol=(q,ci,cx,cwid,half,narrow,fs,ov)=>{const c=q.c,cu=q.cur,R=dfcLoad(q.tf,c),est=!(R&&R.rows&&R.rows.length),
    subs=est?[[c.t,0,c.h,c.l,0,0,0,(c.bv+c.sv)*c.c,0,0,c.bv*c.c]]:R.rows,Z=wkCalc(c,subs),d=Z.tot.b-Z.tot.s,v0=Z.tot.b+Z.tot.s,bpT=v0>0?Z.tot.b/v0:.5,dcol=d>=0?DFW_UP:DFW_DN,
    y1=y(c.h),y2=y(c.l),yt=Math.min(y1,y2),hb=Math.max(3,Math.abs(y2-y1)),mid=cx+half,up=c.c>=c.o,col=up?BC:SC,
    yo=y(c.o),yc=y(c.c),bt=Math.min(yo,yc),bh=Math.max(1.5,Math.abs(yo-yc)),bwd=Math.max(6,Math.min(26,cwid*.36));
@@ -2085,7 +2154,18 @@ function dfDraw(g,o){if(!dfAny()||!S.candles.length)return;const{v,x,cw,T,cy,L,x
    /* บอกค่า Δ ของไส้ทุกอัน (ฟ้า/เหลือง = ฝั่งชนะ · เทา = สมดุล) (ไส้บน = เหนือยอดไส้ · ไส้ล่าง = ใต้ปลายไส้) */
    g.font='700 '+fs+'px Roboto,Noto Sans Thai,monospace';g.textAlign='center';g.lineWidth=1;
    const tx=(f.d>=0?'+':'\u2212')+(narrow?dfSc:dfS)(f.d),tw=g.measureText(tx).width+4,ty=(z0===Z.up)?Math.min(ya,yb)-4:Math.max(ya,yb)+10;
-   g.globalAlpha=.85;g.fillStyle='#101010';g.fillRect(mid-tw/2,ty-9,tw,11);g.globalAlpha=1;g.fillStyle=c2;g.fillText(tx,mid,ty)}
+   g.globalAlpha=.85;g.fillStyle='#101010';g.fillRect(mid-tw/2,ty-9,tw,11);g.globalAlpha=1;g.fillStyle=c2;g.fillText(tx,mid,ty);
+   /* v42 · อ่านความหมายไส้ -> ลงทะเบียนเส้น (ไส้ที่ volume หนา ≥8% ของแท่ง · ความหนาแน่น/หน่วยราคา ≥ 0.75 เท่า · Δ เอียงเกิน ±4%)
+      ไส้บน+Δลบ = Supply · ไส้บน+Δบวก = BSL trap · ไส้ล่าง+Δบวก = Demand · ไส้ล่าง+Δลบ = Break↓
+      LIVE: เส้นคงอยู่ (เก็บใน localStorage) จนกว่าราคาจะ break/sweep ปลายไส้ · แท่งปัจจุบัน/SIM/Replay: ชั่วคราว (วาดเฉพาะเฟรมนี้) */
+   if(layers.dfi){const upW=z0===Z.up,rg=c.h-c.l,sp=Math.abs(z0.e-z0.a),sh=v0>0?f.v/v0:0,dn=rg>0&&sp>0?sh/(sp/rg):0,
+     sig=sh>=.08&&dn>=.75&&Math.abs(f.bp-.5)>=.04,lv=S.mode==='LIVE'&&!(window.RPL&&RPL.on)&&!ov,key=S.sym+'|'+q.tf+'|'+c.t+'|'+(upW?'u':'l'),ex=lv?DFL.get(key):null;
+    if(lv&&!est)DFBD.add(S.sym+'|'+q.tf+'|'+c.t);
+    if(sig&&(upW?f.d<0:f.d>=0)){const neg=f.d<0,it=upW?(neg?['Supply',SC]:['BSL trap','#ffb74a']):(neg?['Break\u2193','#ff7043']:['Demand',BC]),
+      pr=upW?Math.max(z0.a,z0.e):Math.min(z0.a,z0.e),
+      ent={k:key,sym:S.sym,tf:q.tf,t:c.t,ms:(c.ms||TMS[q.tf]||6e4),up:upW,pr,typ:it[0],col:it[1],est,born:ex?ex.born:Date.now()};
+     if(lv){if(!ex||(ex.est&&!est)){DFL.set(key,ent);DFLD=1}}else if(!(window.RPL&&RPL.on))eph.push(ent)}
+    else if(ex&&ex.est&&!est){DFL.delete(key);DFLD=1}}}
   g.lineWidth=1;
   /* หัวป้ายตรึงบนสุด */
   if(!ov){/* กล่องหัวป้าย: กว้างพอดีข้อความ · ข้อความอยู่กึ่งกลาง · วางกึ่งกลางคอลัมน์ */
@@ -2096,8 +2176,22 @@ function dfDraw(g,o){if(!dfAny()||!S.candles.length)return;const{v,x,cw,T,cy,L,x
   g.fillStyle=dcol;g.fillText(r2,mid,hy+21);/* แถว 2 = Δ */
   if(r3)g.fillText(r3,mid,hy+32)/* แถว 3 = % ฝั่งซื้อ */}
 };
- const ovW=34;cols.forEach((q,ci)=>drawCol(q,ci,X0+ci*(cwid+GAP),cwid,half,narrow,fs,false));
- if(ov1)drawCol(ov1,-1,Math.round(x(v.length-1)+cw*.5)-ovW/2,ovW,ovW/2,true,8,true);
+ g=layers.dfc?g0:DFNG;const ovW=34;cols.forEach((q,ci)=>drawCol(q,ci,X0+ci*(cwid+GAP),cwid,half,narrow,fs,false));
+ if(ov1)drawCol(ov1,-1,Math.round(x(v.length-1)+cw*.5)-ovW/2,ovW,ovW/2,true,8,true);g=g0;
+ /* v42 · วาดเส้น dash จากปลายไส้ (แท่งต้นทาง) -> bar_index + 4 · เส้นที่ถูก break/sweep แล้วลบทิ้ง */
+ if(layers.dfi){const act=[];if(!(window.RPL&&RPL.on)&&RPDFL.size){RPDFL.clear();RPDFS.clear()}
+  if(S.mode==='LIVE'&&!(window.RPL&&RPL.on)){for(const e of[...DFL.values()]){if(e.sym!==S.sym||(e.typ!=='Demand'&&e.typ!=='Supply'))continue;if(!e.dead){const bt=dfiBrk(e);if(bt){e.dead=1;e.dt=bt;DFLD=1}}if(e.typ!=='Demand'&&!e.dead)continue;if(e.dead&&e.dt<v[0].t)continue;act.push(e)}if(DFLD){DFLD=0;dfiSave()}}
+  else if(window.RPL&&RPL.on){const atf=new Set(cols.map(q=>q.tf));if(ov1)atf.add(ov1.tf);for(let k=1;k<5;k++)if(Tx[k])atf.add(Tx[k]);
+   for(const e of RPDFL.values()){if(e.sym!==S.sym||!atf.has(e.tf)||e.t+e.ms>RPL.now)continue;const bt=dfiBrkR(e);e.dead=bt?1:0;e.dt=bt;if(e.typ!=='Demand'&&!e.dead)continue;if(e.dead&&e.dt<v[0].t)continue;act.push(e)}}
+  const xe4=Math.round(x(v.length-1+4)+cw*.5)+.5;g.font='700 8px Roboto,Noto Sans Thai,monospace';
+  for(const e of act.concat(eph)){if(e.typ!=='Demand'&&!e.dead)continue;const yy=Math.round(y(e.pr))+.5;if(yy<T+1||yy>T+cy-1)continue;
+   const si=v.findIndex(k=>k.t>=e.t),xs=si<0?L:(v[0].t>e.t?L:Math.round(x(si)+cw*.5)+.5);if(xe4<=xs+4)continue;
+   let xr=xe4;if(e.dead){const bi=v.findIndex(k=>k.t>=e.dt);xr=Math.min(xe4,Math.max(xs+2,Math.round(x(bi<0?v.length-1:bi)+cw*.5)+.5))}/* โดน break/sweep = เส้นจบที่แท่งที่ทะลุ */
+   const ap=e.dead?.5:1;g.save();g.globalAlpha=e.dead?.75:.95;g.strokeStyle=e.col;g.lineWidth=1.3;g.setLineDash(e.dead?[1.5,3]:[5,3]);g.beginPath();g.moveTo(xs,yy);g.lineTo(xr,yy);g.stroke();g.setLineDash([]);
+   if(e.dead){g.restore();continue}/* โดน break/sweep แล้ว = เก็บเส้นไว้เป็นเส้นจุด ไม่มีคำอธิบาย */
+   g.textAlign='right';const lb=e.tf+' '+e.typ+(e.dead?' \u2713':''),lw=g.measureText(lb).width+6;let by=e.up?yy-12:yy+2;
+   for(let n=0;n<6&&dfiOcc.some(r=>xe4-lw<r.x+r.w&&xe4>r.x&&by<r.y+10&&by+10>r.y);n++)by+=e.up?-11:11;
+   dfiOcc.push({x:xe4-lw,y:by,w:lw});g.globalAlpha=.92*ap;g.fillStyle='#101010';g.fillRect(xe4-lw,by,lw,10);g.strokeStyle=e.col;g.lineWidth=1;g.strokeRect(xe4-lw+.5,by+.5,lw-1,9);g.globalAlpha=ap;g.fillStyle=e.col;g.fillText(lb,xe4-3,by+8);g.restore()}}
  g.restore()}
 /* ===== v35 · Δ ไส้ (WICK ZONE DELTA) — volume delta (taker buy − sell, USD) เฉพาะ "โซนไส้" ของแต่ละแท่งเทียนที่เห็นบนกราฟ
    - ไส้บน = ช่วง high ถึงยอดตัวแท่ง · ไส้ล่าง = ช่วง ก้นตัวแท่ง ถึง low (ทั้งไส้ ไม่ใช่เฉพาะปลาย) — วิธีเดียวกับ WICK FLOW (wkCalc/wkZ)
@@ -2446,9 +2540,9 @@ $('symbol').onchange=e=>{S.sym=e.target.value;chNew();start();log('SYMBOL','Swit
 $('risk').oninput=$('acct').oninput=risk;$('clearLog').onclick=()=>{$('lb').innerHTML='';log('LOG','Cleared','cy')};
 /* ===== ALERT SYSTEM : (1) ราคา cross ระดับที่ตั้งไว้ (2) v29 · สัญญาณใหม่ของ strategy ที่เลือก (LONG 1 / SHORT 1) — แทนแจ้งเตือน L/S อันดับ /9 เดิม ===== */
 const ALK='aph_alerts_v1',ALV={},ALG={};
-const AL={rules:[],sg:{on:1,L:1,S:1,scope:'both'},sound:1,vib:1,sys:0,wake:0,hist:[],unread:0};
-try{const j=JSON.parse(localStorage.getItem(ALK)||'null');if(j){if(Array.isArray(j.rules))AL.rules=j.rules.filter(r=>r&&r.sym&&isFinite(r.px)).map(r=>({...r,side:0}));if(j.sg)Object.assign(AL.sg,j.sg);['sound','vib','sys','wake'].forEach(k=>{if(k in j)AL[k]=j[k]});if(Array.isArray(j.hist))AL.hist=j.hist}}catch(e){}
-const alSave=()=>{try{localStorage.setItem(ALK,JSON.stringify({rules:AL.rules.map(r=>({id:r.id,sym:r.sym,px:r.px,dir:r.dir,rep:r.rep,on:r.on,fired:r.fired,t:r.t})),sg:AL.sg,sound:AL.sound,vib:AL.vib,sys:AL.sys,wake:AL.wake,hist:AL.hist}))}catch(e){}},
+const AL={rules:[],sg:{on:1,L:1,S:1,scope:'both'},ev:{on:1,bs:1,ss:1,bd:1,sd:1},sound:1,vib:1,sys:0,wake:0,hist:[],unread:0};
+try{const j=JSON.parse(localStorage.getItem(ALK)||'null');if(j){if(Array.isArray(j.rules))AL.rules=j.rules.filter(r=>r&&r.sym&&isFinite(r.px)).map(r=>({...r,side:0}));if(j.sg)Object.assign(AL.sg,j.sg);if(j.ev)Object.assign(AL.ev,j.ev);['sound','vib','sys','wake'].forEach(k=>{if(k in j)AL[k]=j[k]});if(Array.isArray(j.hist))AL.hist=j.hist}}catch(e){}
+const alSave=()=>{try{localStorage.setItem(ALK,JSON.stringify({rules:AL.rules.map(r=>({id:r.id,sym:r.sym,px:r.px,dir:r.dir,rep:r.rep,on:r.on,fired:r.fired,t:r.t})),sg:AL.sg,ev:AL.ev,sound:AL.sound,vib:AL.vib,sys:AL.sys,wake:AL.wake,hist:AL.hist}))}catch(e){}},
  fmtA=(sym,v)=>fmt(v,SY[sym]?SY[sym].dec:DEC);
 let alMode=S.mode,alCC='',alSC='',alRT=0,alRH='',alAC=null,alFl=null,alFn=0,alWL=null;const alT0=document.title;
 /* --- audio / title flash / wake lock --- */
@@ -2496,6 +2590,16 @@ function alSG(){const X=window.SGX;if(!X||S.mode!=='LIVE')return;const v=X.ver()
    const isL=sd==='L';out.push({ty:sd,sym,short:lbl40(sym)+' '+t1+' '+(isL?'LONG':'SHORT'),title:(isL?'🟢 LONG · ':'🔴 SHORT · ')+lbl40(sym)+' · '+t1,
     body:px.s.n+' 1:'+px.rr+' · Entry '+fmtA(sym,g.entry)+' · SL '+fmtA(sym,g.sl)+' · TP '+fmtA(sym,g.tp)+' · สัญญาณ '+fT(g.rt)})}}
  alPush(out)}
+/* v46 · แจ้งเตือน Break/Sweep Supply·Demand (เหรียญที่เปิดอยู่ · tf0–tf4 ตามตาราง MTF) — แจ้งเมื่อเวลาล่าสุดของแต่ละประเภทเลื่อนใหม่ */
+var ALSD={},alEvT=0;
+function alEv(){if(S.mode!=='LIVE'||!S.M||S.M.k!==S.sym+'|'+S.tf)return;const now=Date.now();if(now-alEvT<2000)return;alEvT=now;
+ const NM={bs:['Break Supply','🔻','sup'],ss:['Sweep Supply','🔻','sup'],bd:['Break Demand','🔺','dem'],sd:['Sweep Demand','🔺','dem']},out=[];
+ for(let k=0;k<5;k++){const m=S.M[k];if(!m)continue;const r=mtfSD(m);
+  for(const ty of['bs','ss','bd','sd']){const key=S.sym+'|'+m.nm+'|'+ty,t=r[ty],old=ALSD[key];
+   if(old===undefined){ALSD[key]=t;continue}if(t<=old)continue;ALSD[key]=t;if(!AL.ev.on||!AL.ev[ty])continue;
+   const n=NM[ty];out.push({ty:n[2],sym:S.sym,short:lbl40(S.sym)+' '+m.nm+' '+n[0],title:n[1]+' '+n[0]+' · '+lbl40(S.sym)+' · '+m.nm,body:'ระดับ '+fmt(r[ty+'p'])+' · เวลา '+fT(t)})}}
+ alPush(out)}
+function alEvSync(){$('alEvOn').checked=!!AL.ev.on;$('alEvBs').checked=!!AL.ev.bs;$('alEvSs').checked=!!AL.ev.ss;$('alEvBd').checked=!!AL.ev.bd;$('alEvSd').checked=!!AL.ev.sd}
 function alSGUi(){const X=window.SGX,P=X?X.pick():{L:null,S:null},nm=x=>x?esc(x.s.n)+' <span class="tiny">TP 1:'+x.rr+'</span>':'<span class="tiny">ยังไม่ได้เลือก — กด "เลือก Strategy"</span>',
   h='<div class="sgl L"><span class="tiny">▲ LONG</span><b>'+nm(P.L)+'</b></div><div class="sgl S"><span class="tiny">▼ SHORT</span><b>'+nm(P.S)+'</b></div><div class="tiny">Timeframe = '+esc(tfs()[1]||'—')+' (ตามกราฟ) · แจ้งเมื่อแท่งสัญญาณปิด</div>';
  if(h!==alSgH){alSgH=h;$('alSgInfo').innerHTML=h}}
@@ -2515,7 +2619,7 @@ function alRender(){alSGUi();
  $('alStat').textContent=(S.mode==='LIVE'?'LIVE':'SIM — แจ้งเตือนตาม strategy ทำงานเฉพาะ LIVE')+' · คำนวณแล้ว '+(window.SGX?SGX.count():0)+'/'+(window.SGX?SGX.syms().length:0)+' เหรียญ · '+(AL.sg.scope==='cur'?lbl40(S.sym):AL.sg.scope==='scan'?'PA SCAN':lbl40(S.sym)+' + PA SCAN')}
 function alSync(){$('alSgOn').checked=!!AL.sg.on;$('alL').checked=!!AL.sg.L;$('alS').checked=!!AL.sg.S;$('alScope').value=AL.sg.scope;$('alSnd').checked=!!AL.sound;$('alVib').checked=!!AL.vib;$('alSys').checked=!!AL.sys&&'Notification'in window&&Notification.permission==='granted';$('alKeep').checked=!!AL.wake}
 function alFill(){const p=alPx($('alSym').value);$('alPrice').value=p!=null?String(+p.toPrecision(7)):''}
-function alOpen(){AL.unread=0;alBadge();$('alSym').innerHTML=$('symbol').innerHTML;$('alSym').value=S.sym;alFill();alSync();alNote('');$('alPanel').hidden=false;alAudio();alRH='';alRender()}
+function alOpen(){AL.unread=0;alBadge();$('alSym').innerHTML=$('symbol').innerHTML;$('alSym').value=S.sym;alFill();alSync();alEvSync();alNote('');$('alPanel').hidden=false;alAudio();alRH='';alRender()}
 function alShut(){$('alPanel').hidden=true}
 function alInit(){
  $('alBtn').onclick=alOpen;$('alClose').onclick=alShut;$('alPanel').addEventListener('click',e=>{if(e.target===$('alPanel'))alShut()});
@@ -2529,6 +2633,7 @@ function alInit(){
   if(b.dataset.a==='rm')AL.rules.splice(i,1);else{const r=AL.rules[i];r.on=r.on?0:1;r.side=0}alSave();alBadge();alRH='';alRender()});
  const bind=(id,fn)=>$(id).addEventListener('change',()=>{fn($(id));alSave();alGV=-1;alBadge();alRender()});
  bind('alSgOn',e=>AL.sg.on=e.checked?1:0);
+ bind('alEvOn',e=>AL.ev.on=e.checked?1:0);bind('alEvBs',e=>AL.ev.bs=e.checked?1:0);bind('alEvSs',e=>AL.ev.ss=e.checked?1:0);bind('alEvBd',e=>AL.ev.bd=e.checked?1:0);bind('alEvSd',e=>AL.ev.sd=e.checked?1:0);
  bind('alL',e=>AL.sg.L=e.checked?1:0);bind('alS',e=>AL.sg.S=e.checked?1:0);bind('alScope',e=>AL.sg.scope=e.value);
  bind('alSnd',e=>{AL.sound=e.checked?1:0;if(AL.sound)alAudio()});bind('alVib',e=>AL.vib=e.checked?1:0);bind('alKeep',e=>{AL.wake=e.checked?1:0;alKeepAwake()});
  $('alSys').addEventListener('change',()=>{const c=$('alSys');if(!c.checked){AL.sys=0;alSave();return}
@@ -2543,7 +2648,7 @@ function alInit(){
 /* --- main loop (called every 250 ms; scan part every 2 s) --- */
 function alTick(){if(window.RPL&&RPL.on)return;if(S.mode!==alMode){alMode=S.mode;AL.rules.forEach(r=>r.side=0)}
  for(const r of AL.rules)if(r.on)alRule(r,alPx(r.sym));
- alSG();
+ alSG();alEv();
  if(!$('alPanel').hidden&&Date.now()-alRT>1000){alRT=Date.now();alRender()}}
 alInit();
 setInterval(()=>{if(document.hidden)return;$('clock').textContent=new Date().toLocaleTimeString('en-GB')+' UTC+'+(-new Date().getTimezoneOffset()/60)},1000);
@@ -2713,7 +2818,7 @@ function drawRng(g,d,sel){const k=geo(d),G=D.G,xa=Math.min(k.x1,k.x2),xb=Math.ma
  const y1=cl(ly,G.T+10,G.T+G.cy-(box?28:10));tag(g,t1,vx,y1,rgba(col,.92),fg(col));if(box)tag(g,t2,vx,y1+17,'rgba(22,22,22,.88)','#efefef');
  if(sel)for(const[,px,py]of corners(d,k))handle(g,px,py,acc)}
 function axisTags(g,d){const G=D.G,xe=G.xe,acc=ACC(),a=isPos(d)?[[d.tp,TH.up],[d.sl,TH.dn],[d.p1,'#b8b8b8']]:[[d.p1,acc],[d.p2,acc]];
- g.font='10px Roboto,Noto Sans Thai,monospace';g.textAlign='left';for(const[p,c]of a){const y=Y(p);if(y<G.T||y>G.T+G.cy)continue;g.fillStyle=c;g.fillRect(xe+2,y-8,72,16);g.fillStyle=fg(c);g.fillText(fmt(p),xe+6,y+4)}}
+ g.font='10px Roboto,Noto Sans Thai,monospace';g.textAlign='left';for(const[p,c]of a){const y=Y(p);if(y<G.T||y>G.T+G.cy)continue;g.fillStyle=c;g.fillRect(xe+2,y-8,G.R-4,16);g.fillStyle=fg(c);g.save();g.font='9px Roboto,Noto Sans Thai,monospace';g.fillText(fmt(p),xe+4,y+4);g.restore()}}
 window.drawDraw=function(g,o){D.G={L:o.L,R:o.R,w:o.w,xe:o.w-o.R,T:o.T,cy:o.cy,off:o.off,cw:o.cw};load();
  if(!D.list.length&&!D.pend&&!D.hov)return;const G=D.G;g.save();g.beginPath();g.rect(G.L,G.T,G.xe-G.L,G.cy);g.clip();
  for(const d of D.list)(isPos(d)?drawPos:drawRng)(g,d,d.id===D.sel);
