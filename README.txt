@@ -1,4 +1,4 @@
-AphiwatTradeView - web app package (made with aphiwat htmlTOapp)
+Aphiwataras — Live Order Flow - web app package (made with aphiwat htmlTOapp)
 
 1. Upload this whole folder to an HTTPS host (GitHub Pages, Netlify, Cloudflare Pages, or your own server).
 2. Open the web address in Safari on iPhone or iPad.

@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "AphiwatTradeView",
+  "name": "Aphiwataras — Live Order Flow",
   "short_name": "Aphiwataras",
-  "description": "AphiwatTradeView web app",
+  "description": "Aphiwataras — Live Order Flow web app",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

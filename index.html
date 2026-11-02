@@ -1097,6 +1097,10 @@ html .logo,html.m .logo{flex:none;min-width:max-content;display:inline-grid;plac
 .pab .sr>span:first-child{font-weight:800;opacity:1;letter-spacing:.3px}
 .pab .sr>span:nth-child(2){font-size:1.3em;font-weight:700;letter-spacing:.3px;text-shadow:0 0 6px currentColor}
 html.m.ipd .pab .sr{height:18px;line-height:18px;font-size:9.5px;padding:0 3px;gap:2px}
+
+/* เลือกแท่งย่อย tf1–tf4 (แถบล่าง) */
+.legend .dfsub{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;margin-left:8px}
+.legend .dfsub select{background:#1a1a1a;color:#ddd;border:1px solid #444;border-radius:4px;font:inherit;font-size:10px;padding:0 2px;height:18px;cursor:pointer}
 </style>
 <script>
 (function(){
@@ -1203,7 +1207,7 @@ document.addEventListener('DOMContentLoaded',function(){
           <button id="fzX" style="display:none">ปิด position</button>
         </div></div>
 <div id="tkP" role="region" aria-label="Tickers L/S signal"><div class="tkS" id="tkS"></div></div></div>
-      <div class="legend" id="dfLegend"><span>Δ tf1-4 ก่อนหน้า (ฝั่งขวา) · tf1 ปัจจุบันบนแท่งล่าสุด</span><label title="แท่งเทียนปัจจุบันของ tf1 + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df1"> tf1</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf2 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df2"> tf2</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf3 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df3"> tf3</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf4 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df4"> tf4</label><label title="Δ ไส้: volume delta (taker buy−sell) เฉพาะโซนไส้บน/ล่างของแต่ละแท่ง — แสดงเฉพาะโซนที่ฝั่งใดฝั่งหนึ่งชนะชัด: ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ (LIVE, 5m ขึ้นไป)"><input type="checkbox" autocomplete="off" checked data-layer="dfw"> ไส้ Δ</label><label title="เส้น Demand (แนวรับ) จาก tf1–tf4 + แท่งปัจจุบัน = เส้น dash จากปลายไส้ล่างไปถึงแท่งล่าสุด + 4 แท่ง เมื่อ volume ที่ไส้ล่างหนาและ Δ บวก (ผู้ขายถูกซื้อรับ)\nเมื่อราคา break/sweep เส้น Demand/Supply → เก็บเส้นไว้เป็นเส้นจุด (dotted) โปร่งใส ~25% (เห็นชัดแต่ไม่เด่น) จบที่แท่งที่ทะลุ ไม่มีคำอธิบาย · Bar Replay แสดงด้วย (ค่าประมาณจากแท่งเทียน)"><input type="checkbox" autocomplete="off" checked data-layer="dfi"> เส้นไส้</label><label title="แสดงแท่งเทียน/Δ ของ tf1–tf4 ฝั่งขวา + Δ บนแท่งปัจจุบัน · ปิดได้โดยเส้นไส้ยังอยู่ (ใช้ร่วมกับ tf1–tf4 ที่เลือก)"><input type="checkbox" autocomplete="off" checked data-layer="dfc"> แท่งเทียน</label><label title="เส้นเปลี่ยนวัน (00:00 UTC) — เส้นประสีทอง + วันที่ (แสดงเมื่อ TF กราฟ ≤ 4H)"><input type="checkbox" autocomplete="off" checked data-layer="day"> เส้นวัน</label></div>
+      <div class="legend" id="dfLegend"><span>Δ tf1-4 ก่อนหน้า (ฝั่งขวา) · tf1 ปัจจุบันบนแท่งล่าสุด</span><label title="แท่งเทียนปัจจุบันของ tf1 + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df1"> tf1</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf2 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df2"> tf2</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf3 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df3"> tf3</label><label title="แท่งเทียนก่อนหน้า (ปิดแล้ว) ของ tf4 + ระดับซื้อเยอะ/ขายเยอะ (✓ = ถูกลากเก็บแล้ว) + Δ ที่ไส้ (ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ)"><input type="checkbox" autocomplete="off" data-layer="df4"> tf4</label><label title="Δ ไส้: volume delta (taker buy−sell) เฉพาะโซนไส้บน/ล่างของแต่ละแท่ง — แสดงเฉพาะโซนที่ฝั่งใดฝั่งหนึ่งชนะชัด: ฟ้า = ซื้อชนะ · เหลือง = ขายชนะ (LIVE, 5m ขึ้นไป)"><input type="checkbox" autocomplete="off" checked data-layer="dfw"> ไส้ Δ</label><label title="เส้น Demand (แนวรับ) จาก tf1–tf4 + แท่งปัจจุบัน = เส้น dash จากปลายไส้ล่างไปถึงแท่งล่าสุด + 4 แท่ง เมื่อ volume ที่ไส้ล่างหนาและ Δ บวก (ผู้ขายถูกซื้อรับ)\nเมื่อราคา break/sweep เส้น Demand/Supply → เก็บเส้นไว้เป็นเส้นจุด (dotted) โปร่งใส ~25% (เห็นชัดแต่ไม่เด่น) จบที่แท่งที่ทะลุ ไม่มีคำอธิบาย · Bar Replay แสดงด้วย (ค่าประมาณจากแท่งเทียน)"><input type="checkbox" autocomplete="off" checked data-layer="dfi"> เส้นไส้</label><label title="แสดงแท่งเทียน/Δ ของ tf1–tf4 ฝั่งขวา + Δ บนแท่งปัจจุบัน · ปิดได้โดยเส้นไส้ยังอยู่ (ใช้ร่วมกับ tf1–tf4 ที่เลือก)"><input type="checkbox" autocomplete="off" checked data-layer="dfc"> แท่งเทียน</label><label title="เส้นเปลี่ยนวัน (00:00 UTC) — เส้นประสีทอง + วันที่ (แสดงเมื่อ TF กราฟ ≤ 4H)"><input type="checkbox" autocomplete="off" checked data-layer="day"> เส้นวัน</label><span id="dfSub" class="dfsub"></span></div>
     </div>
     <div class="card scancard" data-p="scan" data-pw="chart">
       <div class="st"><h2>PA SCAN · 40 TICKERS</h2><span class="tiny" id="scanI">loading…</span></div>
@@ -1638,7 +1642,8 @@ function wkCell(k,T){const tf=T[k],bz='transparent',GR='#a0a0a0',
 function mtf(){const key=S.mode+S.sym+S.tf;if(key!==mKey){mKey=key;for(const t in M)delete M[t];mLoad=Date.now();loadM()}else if(S.mode==='LIVE'&&Date.now()-mLoad>6e4){mLoad=Date.now();loadM()}
  if(!S.candles.length)return;if(!(window.RPL&&RPL.on))bumpM();const T=tfs();S.M=[];for(let k=0;k<5;k++)S.M[k]=mtfOne(k,cdl(k,T),T[k]);S.M.k=S.sym+'|'+S.tf;
  /* เวลา PA: tf0 = แท่งตัวเอง · tf1 ยืนยันด้วยแท่ง tf0 · tf2-tf4 ยืนยันด้วยแท่ง tf1 (หาแท่งเล็กแรกที่ราคาทะลุ/แตะระดับ ภายในแท่งของ TF นั้น) */
- try{const R0=cdl(0,T),R1=cdl(1,T);for(let k=1;k<5;k++){const m=S.M[k];if(!m)continue;const ref=k===1?R0:R1,dur=TMS[m.nm]||0;if(!ref||!ref.length||!dur)continue;for(const r of m.sd.concat(m.ls&&!m.sd.includes(m.ls)?[m.ls]:[])){const o=r.o;r.tm2=null;if(!o||!r.tm)continue;const t0=r.tm,t1=t0+dur,tl=m.atr*.25;for(const x of ref){if(x.t<t0)continue;if(x.t>=t1)break;if(r.brk?(o.hi?x.h>o.px:x.l<o.px):(o.hi?x.h>=o.px-tl:x.l<=o.px+tl)){r.tm2=x.t;break}}}}}catch(e){}
+ /* เวลา Break/Sweep: tf0·tf1 ยืนยันด้วยแท่งของตัวเอง (เวลาแท่งที่ทะลุ) · tf2–tf4 ยืนยันด้วยแท่ง tf1 (แท่ง tf1 แรกที่ราคาทะลุระดับ swing ภายในแท่งของ TF นั้น) -> s.tt2 */
+ try{const R1=cdl(1,T);for(let k=2;k<5;k++){const m=S.M[k];if(!m||!m.sw)continue;const dur=TMS[m.nm]||0;if(!R1||!R1.length||!dur)continue;for(const s of m.sw){s.tt2=0;if(!s.tag||!(s.end>=0)||!s.tt)continue;const t1=s.tt+dur;for(const x of R1){if(x.t<s.tt)continue;if(x.t>=t1)break;if(s.hi?x.h>s.px:x.l<s.px){s.tt2=x.t;break}}}}}catch(e){}
  const a0=(S.M[0]||S.M[1]||{}).atr,cell=(t,bg,fg,b,tip)=>({t,bg,fg,b:b?'700':'',tip:tip||''}),mh=(t,tip)=>({t,bg:'',fg:'',b:'',tip:tip||''});
 
   const DEF=[['Brk','bs','#ef6b62','Supply = swing high · Break = ปิดทะลุ'],['Swp','ss','#ef6b62','Supply = swing high · Sweep = ไส้ทะลุแล้วปิดกลับ'],['Swp','sd','#29d668','Demand = swing low · Sweep = ไส้ทะลุแล้วปิดกลับ'],['Brk','bd','#29d668','Demand = swing low · Break = ปิดทะลุ']],R4=[[],[],[],[]];
@@ -1652,7 +1657,7 @@ function mtf(){const key=S.mode+S.sym+S.tf;if(key!==mKey){mKey=key;for(const t i
   const rows=R4;rows.hl=HL;rows.ol=null;mtfPaint(rows)}
 /* v46 · เวลาล่าสุดของ Break/Sweep: Supply = swing high · Demand = swing low (rc 2 = ปิดทะลุ = Break · rc 1 = ไส้ทะลุแล้วปิดกลับ = Sweep) — ใช้กับตาราง MTF + แจ้งเตือน */
 function mtfSD(m){const r={bs:0,ss:0,bd:0,sd:0,bsp:0,ssp:0,bdp:0,sdp:0};if(!m||!m.sw)return r;
- for(const s of m.sw){if(!s.tag||!(s.end>=0)||!s.tt)continue;const ty=s.hi?(s.rc===1?'ss':'bs'):(s.rc===1?'sd':'bd');if(s.tt>r[ty]){r[ty]=s.tt;r[ty+'p']=s.px}}return r}
+ for(const s of m.sw){if(!s.tag||!(s.end>=0)||!s.tt)continue;const ty=s.hi?(s.rc===1?'ss':'bs'):(s.rc===1?'sd':'bd'),tv=s.tt2||s.tt;if(tv>r[ty]){r[ty]=tv;r[ty+'p']=s.px}}return r}
 /* build the table skeleton once, then only touch the cells whose content really changed (no innerHTML churn, no column re-layout) */
 let mtTD=null;
 function mtfPaint(rows){const host=$('mtfTop');
@@ -1991,9 +1996,21 @@ function wkDraw(g,o){if(!WK.t)return;if(WK.sym!==S.sym||WK.tf!==S.tf){wkClose();
      แท่งยาวไปขวา(เขียว) = Δ บวก · ยาวไปซ้าย(แดง) = Δ ลบ · กรอบขาว = ชั้นที่ |Δ| มากที่สุด
    - แท่งย่อยเลือกอัตโนมัติ (1m/5m/15m/1h/4h) ให้ไม่เกิน ~1400 แท่ง · ไม่มีข้อมูลแท่งย่อย (tf1 = 1m / SIM / Replay) -> ใช้ volume ของแต่ละแท่งกระจายตาม low–high (~) */
 var DFC=new Map(),DFN=20,dfAny=()=>!!(layers.df1||layers.df2||layers.df3||layers.df4),DFIV=[['1m',6e4],['5m',3e5],['15m',9e5],['1h',36e5],['4h',144e5]];
+/* ===== เลือกแท่งย่อย (sub-candle) ของ tf1–tf4 · Auto = เล็กสุดที่ไม่เกินลิมิตของแต่ละงาน · เลือกเองได้ที่แถบล่าง (#dfSub) ===== */
+var SUBIV={1:'auto',2:'auto',3:'auto',4:'auto'};try{const o=JSON.parse(localStorage.getItem('aph_subiv')||'{}');for(const k of[1,2,3,4])if(o[k])SUBIV[k]=o[k]}catch(e){}
+function dfIv(tf,ms,span,cap){let k=0;try{k=dfTf2(tfs()).indexOf(tf,1)}catch(e){}const pk=k>0?SUBIV[k]:'auto',m=pk&&pk!=='auto'?DFIV.find(q=>q[0]===pk):null;
+ if(m&&m[1]<ms&&span/m[1]<=cap)return m;return DFIV.find(q=>q[1]<ms&&span/q[1]<=cap)||null}
+(function(){const host=document.getElementById('dfSub');if(!host)return;let sig='';
+ function build(){let T;try{T=dfTf2(tfs())}catch(e){return}const sg=T.slice(1,5).join('|')+'#'+[1,2,3,4].map(k=>SUBIV[k]).join('|');if(sig===sg)return;sig=sg;
+  host.innerHTML='<span>แท่งย่อย</span>'+[1,2,3,4].map(k=>{const tf=T[k];if(!tf)return'';const ms=TMS[tf]||0,op=DFIV.filter(q=>q[1]<ms&&ms/q[1]<=200);
+   return'<label title="แท่งย่อยที่ใช้คำนวณ Δ/เส้นไส้ของ tf'+k+' ('+tf+') · Auto = เลือกอัตโนมัติ · แท่งย่อยเล็ก = แม่นกว่าแต่โหลดมากกว่า · ต้อง LIVE"> tf'+k+' <select data-sk="'+k+'"><option value="auto">Auto</option>'+op.map(q=>'<option value="'+q[0]+'"'+(SUBIV[k]===q[0]?' selected':'')+'>'+q[0]+'</option>').join('')+'</select></label>'}).join('')}
+ function flush(k){let tf;try{tf=dfTf2(tfs())[k]}catch(e){}DFC.clear();DFBF.clear();DFBD.clear();RPDFS.clear();try{DFWC.clear()}catch(e){}
+  if(tf){for(const[key,e]of[...DFL]){if(e.tf===tf&&e.sym===S.sym)DFL.delete(key)}DFLD=1}}
+ host.addEventListener('change',e=>{const el=e.target.closest&&e.target.closest('select[data-sk]');if(!el)return;const k=+el.dataset.sk;SUBIV[k]=el.value;try{localStorage.setItem('aph_subiv',JSON.stringify(SUBIV))}catch(x){}sig='';flush(k);build()});
+ build();setInterval(build,1000)})();
 function dfLoad(tf,arr){if(S.mode!=='LIVE'||(window.RPL&&RPL.on)||!arr||arr.length<2)return null;
  const n=Math.min(DFN,arr.length),f=arr[arr.length-n],l=arr[arr.length-1],ms=TMS[tf]||6e4,st=f.t,en=l.t+ms-1;
- const iv=DFIV.find(q=>q[1]<ms&&(en-st)/q[1]<=1400);if(!iv)return null;
+ const iv=dfIv(tf,ms,en-st,1400);if(!iv)return null;
  const key=S.sym+'|'+tf+'|'+l.t+'|'+n,now=Date.now(),e=DFC.get(key),live=l.t+ms>now;
  if(e&&(e.busy||(e.r&&!live)||now-e.at<6e3))return e.r;
  DFC.set(key,{r:e?e.r:null,at:now,busy:1});
@@ -2021,7 +2038,7 @@ function dfPaint(g,o){const{bins,VV,X,half,y,BC,SC,mx,pi}=o;
    - Δ ไส้ = taker buy−sell (USD) เฉพาะโซนไส้ ดึงแท่งย่อยจริงจาก Binance (LIVE) · ไม่มีข้อมูลแท่งย่อย -> ประมาณจาก volume ของแท่ง (~)
    - แสดงเฉพาะไส้ที่ฝั่งใดฝั่งหนึ่งชนะชัด (≥ DFW_TH): ซื้อชนะ = ฟ้า · ขายชนะ = เหลือง · สมดุล = ไม่แสดง */
 function dfcLoad(tf,c){const ms=(c&&c.ms)||TMS[tf]||6e4;if(S.mode!=='LIVE'||(window.RPL&&RPL.on))return null;
- const iv=DFIV.find(q=>q[1]<ms&&ms/q[1]<=1400);if(!iv)return null;
+ const iv=dfIv(tf,ms,ms,1400);if(!iv)return null;
  const key='C|'+S.sym+'|'+tf+'|'+c.t,now=Date.now(),e=DFC.get(key),live=c.t+ms>now;
  if(e&&(e.busy||(e.r&&!live)||now-e.at<3e3))return e.r;
  DFC.set(key,{r:e?e.r:null,at:now,busy:1});
@@ -2045,7 +2062,7 @@ function dfxGet(tf){if(window.RPL&&RPL.on)return null;const key=S.mode+'|'+S.sym
  const c=e.c;if(!c)return null;const p=S.price;if(p>0){c.c=p;if(p>c.h)c.h=p;if(p<c.l)c.l=p}return e.p?[e.p,c]:[c]}
 /* v42 · เส้นอ่านไส้ที่คงอยู่ (persist) จนกว่าราคาจะ break/sweep ปลายไส้ — key = symbol|tf|เวลาเปิดแท่ง|u/l */
 var DFL=new Map(),DFLK='aph-dfi-lines',DFLD=0;
-(function(){try{JSON.parse(localStorage.getItem(DFLK)||'[]').forEach(function(e){if(e&&e.k)DFL.set(e.k,e)})}catch(e){}})();
+(function(){try{JSON.parse(localStorage.getItem(DFLK)||'[]').forEach(function(e){if(e&&e.k){if(e.vr!==2){e.dead=0;e.dt=0;e.vr=2}/* v2: ล้างสถานะ dead ที่อาจถูกตั้งผิดจากราคา/แท่ง SIM ตอนเริ่มระบบ */DFL.set(e.k,e)}})}catch(e){}})();
 function dfiSave(){try{const a=[...DFL.values()].sort((p,q)=>(p.dead?1:0)-(q.dead?1:0)||q.born-p.born).slice(0,120);DFL.clear();a.forEach(e=>DFL.set(e.k,e));localStorage.setItem(DFLK,JSON.stringify(a))}catch(e){}}
 /* โดน break/sweep = หลังแท่งต้นทางปิด ราคา (ไส้ของแท่งกราฟ + ราคาล่าสุด) วิ่งผ่านปลายไส้ — ไส้บน: high > ระดับ · ไส้ล่าง: low < ระดับ · คืนเวลาแท่งที่ทะลุ (0 = ยังไม่โดน) · เส้นที่โดนแล้วไม่ลบ วาดจาง 50% เป็นข้อมูลย้อนหลัง */
 function dfiBrk(e){const st=e.t+e.ms,cs=S.candles,H=M[e.tf],hit=q=>e.up?q.h>e.pr:q.l<e.pr,hm=TMS[e.tf]||e.ms;let bt=0;
@@ -2067,7 +2084,7 @@ var DFBF=new Set();
 function dfiBackfill(tf,arr){if(S.mode!=='LIVE'||(window.RPL&&RPL.on)||!arr||arr.length<3)return;
  const bk=S.sym+'|'+tf;if(DFBF.has(bk))return;
  const ms=TMS[tf]||6e4,n=Math.min(DFN,arr.length-1),cs=arr.slice(arr.length-1-n,arr.length-1),st=cs[0].t,en=cs[cs.length-1].t+ms-1,
-  iv=DFIV.find(q=>q[1]<ms&&(en-st)/q[1]<=4000);if(!iv)return;
+  iv=dfIv(tf,ms,en-st,4000);if(!iv)return;
  DFBF.add(bk);const sym=S.sym,sy=SY[sym].ws.toUpperCase();
  (async()=>{try{let rows=[],cur=st;for(let pg=0;pg<3&&cur<en;pg++){const j=await(await fetch(`https://fapi.binance.com/fapi/v1/klines?symbol=${sy}&interval=${iv[0]}&startTime=${cur}&endTime=${en}&limit=1500`)).json();
     if(!Array.isArray(j)||!j.length)break;rows=rows.concat(j);if(j.length<1500)break;cur=j[j.length-1][0]+1}
@@ -2180,7 +2197,7 @@ function dfDraw(g0,o){let g=g0;if(!S.candles.length)return;const{v,x,cw,T,cy,L,x
  if(ov1)drawCol(ov1,-1,Math.round(x(v.length-1)+cw*.5)-ovW/2,ovW,ovW/2,true,8,true);g=g0;
  /* v42 · วาดเส้น dash จากปลายไส้ (แท่งต้นทาง) -> bar_index + 4 · เส้นที่ถูก break/sweep แล้วลบทิ้ง */
  if(layers.dfi){const act=[];if(!(window.RPL&&RPL.on)&&RPDFL.size){RPDFL.clear();RPDFS.clear()}
-  if(S.mode==='LIVE'&&!(window.RPL&&RPL.on)){for(const e of[...DFL.values()]){if(e.sym!==S.sym||(e.typ!=='Demand'&&e.typ!=='Supply'))continue;if(!e.dead){const bt=dfiBrk(e);if(bt){e.dead=1;e.dt=bt;DFLD=1}}if(e.typ!=='Demand'&&!e.dead)continue;if(e.dead&&e.dt<v[0].t)continue;act.push(e)}if(DFLD){DFLD=0;dfiSave()}}
+  if(S.mode==='LIVE'&&!(window.RPL&&RPL.on)){for(const e of[...DFL.values()]){if(e.sym!==S.sym||(e.typ!=='Demand'&&e.typ!=='Supply'))continue;if(!e.dead&&HL.ok){const bt=dfiBrk(e);if(bt){e.dead=1;e.dt=bt;DFLD=1}}if(e.typ!=='Demand'&&!e.dead)continue;if(e.dead&&e.dt<v[0].t)continue;act.push(e)}if(DFLD){DFLD=0;dfiSave()}}
   else if(window.RPL&&RPL.on){const atf=new Set(cols.map(q=>q.tf));if(ov1)atf.add(ov1.tf);for(let k=1;k<5;k++)if(Tx[k])atf.add(Tx[k]);
    for(const e of RPDFL.values()){if(e.sym!==S.sym||!atf.has(e.tf)||e.t+e.ms>RPL.now)continue;const bt=dfiBrkR(e);e.dead=bt?1:0;e.dt=bt;if(e.typ!=='Demand'&&!e.dead)continue;if(e.dead&&e.dt<v[0].t)continue;act.push(e)}}
   const xe4=Math.round(x(v.length-1+4)+cw*.5)+.5;g.font='700 8px Roboto,Noto Sans Thai,monospace';
@@ -2202,7 +2219,7 @@ var DFWC=new Map(),DFWB={busy:0,at:0},DFW_TH=.58,DFW_UP='#3fd0ff',DFW_DN='#ffe60
 function dfwLoad(v){if(S.mode!=='LIVE'||(window.RPL&&RPL.on)||!v.length)return;const ms=TF[S.tf]||6e4,now=Date.now(),pre=S.sym+'|'+S.tf+'|';let f=-1;
  for(let i=0;i<v.length;i++){const e=DFWC.get(pre+v[i].t);if(!e||(!e.fin&&(v[i].t+ms<=now||now-e.at>6e3))){f=i;break}}
  if(f<0||DFWB.busy||now-DFWB.at<2500)return;
- const st=v[f].t,en=v[v.length-1].t+ms-1,iv=DFIV.find(q=>q[1]<ms&&(en-st+1)/q[1]<=3000);if(!iv)return;
+ const st=v[f].t,en=v[v.length-1].t+ms-1,iv=dfIv(S.tf,ms,en-st+1,3000);if(!iv)return;
  DFWB.busy=1;DFWB.at=now;const sy=SY[S.sym].ws.toUpperCase(),list=v.slice(f);
  (async()=>{try{let rows=[],cur=st;for(let pg=0;pg<6&&cur<en;pg++){const r=await fetch(`https://fapi.binance.com/fapi/v1/klines?symbol=${sy}&interval=${iv[0]}&startTime=${cur}&endTime=${en}&limit=1500`),j=await r.json();
    if(!Array.isArray(j)||!j.length)break;rows=rows.concat(j);if(j.length<1500)break;cur=j[j.length-1][0]+1}
@@ -2222,7 +2239,7 @@ function dfWick(g,o){if(!layers.dfw||!S.candles.length)return;const{v,x,cw,T,cy,
    - วางถัดจากแท่งทางขวา (ก่อนถึง Δ Profile 20 แท่ง) · ขวา(เขียว) = Δ+ · ซ้าย(แดง) = Δ− · ชั้นที่ |Δ| มากสุด = ฟ้าสว่าง (Δ+) / เหลืองสว่าง (Δ−)
    - LIVE: ใช้แท่งย่อยจริงจาก Binance (อัปเดตทุก ~3 วิขณะแท่งยังไม่ปิด) · 1m / SIM / Replay: ประมาณจาก volume ของแท่ง (~) */
 function dfbLoad(c){const ms=TF[S.tf]||6e4;if(S.mode!=='LIVE'||(window.RPL&&RPL.on))return null;
- const iv=DFIV.find(q=>q[1]<ms&&ms/q[1]<=1400);if(!iv)return null;
+ const iv=dfIv(S.tf,ms,ms,1400);if(!iv)return null;
  const key='B|'+S.sym+'|'+S.tf+'|'+c.t,now=Date.now(),e=DFC.get(key),live=c.t+ms>now;
  if(e&&(e.busy||(e.r&&!live)||now-e.at<3e3))return e.r;
  DFC.set(key,{r:e?e.r:null,at:now,busy:1});
